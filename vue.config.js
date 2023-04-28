@@ -6,5 +6,6 @@ module.exports = defineConfig({
     msTileColor: '#2D2D2D',
     appleMobileWebAppCapable: 'no'
   },
-  transpileDependencies: true
+  transpileDependencies: true,
+  outputDir : 'docs'
 })
