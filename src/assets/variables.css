@@ -1,0 +1,43 @@
+:root {
+    --accent: #F29540;
+    --grey1: #242424;
+    --grey2: #2D2D2D;
+    --grey3: #333333;
+    --grey4: #3D3D3D;
+    --grey5: #444444;
+    --grey6: #4F4F4F;
+    --grey7: #828282;
+    --grey8: #BDBDBD;
+    --grey9: #E0E0E0;
+    --grey10: #F2F2F2;
+    --black: #090909;
+
+    --text-sm: 1.4rem;
+    --text-md: 1.6rem;
+    --text-lg: 2rem;
+    --text-xl: 2.2rem;
+    --text-leading-sm: 2rem;
+    --text-leading-md: 2.2rem;
+    --text-leading-xl: 2.4rem;
+
+    --space-xxs: .2rem;
+    --space-xs: .4rem;
+    --space-sm: .8rem;
+    --space-md: 1.6rem;
+    --space-lg: 3.2rem;
+    --space-xl: 6.4rem;
+
+    --radius-xs: 0.2rem;
+    --radius-sm: 0.4rem;
+    --radius-md: 0.8rem;
+    --radius-lg: 1.6rem;
+
+    --shadow-btn-default: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+    --shadow-btn-hover: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    --shadow-modal: 0px 16px 32px 0px rgba(0, 0, 0, 0.5);
+
+
+    --hover-anim: background .2s, shadow .2s, opacity .2s;
+
+    --btn-outer-frame: 0.6rem;
+  }
