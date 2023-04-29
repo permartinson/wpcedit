@@ -14,3 +14,7 @@ This is an updated version of Garrett Lee's original WPC Edit software, now buil
 
 - BMP export does not work with some sprite dimensions. All sprites are now exported as full 128x32 frames.
 - Sprite table adress propery is not fully working, seems to generate the same address for all tables.
+
+## WPCEdit.js
+
+- This project is built upon my Javascript library WPCEdit.js, which is port of the original WPC Edit app. The repository for the library is here: https://github.com/permartinson/wpcedit.js

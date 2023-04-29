@@ -149,6 +149,10 @@ export default {
     margin: var(--space-lg) 0;
   }
 
+  a {
+    color: var(--accent);
+  }
+
   .fade-enter-active {
     transition: all 1s ease-out;
   }
