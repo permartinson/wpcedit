@@ -32,7 +32,7 @@
                 </div>
             <hr/>
             <p class="headline">About WPC Edit</p>
-            <p class="body-sm">WPC Edit was first developed and released in 2004 by Garrett Lee as a Windows app. In 2023, Per Martinson took on the challange to transition the code base to Javascript and turn it into a web app. All the code is open source, and you may help improving it at </p>
+            <p class="body-sm">WPC Edit was first developed and released in 2004 by Garrett Lee as a Windows app. In 2023, Per Martinson took on the challange to transition the code base to Javascript and turn it into a web app. All the code is open source, and published at <a target="_blank" href="https://github.com/permartinson/wpcedit">https://github.com/permartinson/wpcedit</a>. Please help out by submitting any bugs you might find.</p>
             </div>
         </div>
     </div>

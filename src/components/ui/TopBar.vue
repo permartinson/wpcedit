@@ -51,7 +51,7 @@ export default {
     },
     methods: {
       goHome() {
-        this.$router.push('/');
+        this.$router.push('/wpcedit');
       },
       download() {
         MainStore.downloadRom();
@@ -82,7 +82,7 @@ export default {
       continueUnload() {
         this.showAlert = false;
         MainStore.unloadRom();
-        this.$router.push('/');
+        this.$router.push('/wpcedit');
       }
     },
     components: {

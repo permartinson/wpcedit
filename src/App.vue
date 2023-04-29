@@ -58,7 +58,7 @@ export default {
   mounted() {
     // restore rom data from cache:
     if( this.romIsLoaded && this.currentRomData == null ) {
-      this.$router.push('/'); // force back to main page, because the data has not been loaded yet
+      this.$router.push('/wpcedit'); // force back to main page, because the data has not been loaded yet
       MainStore.getRomFromCache();
     }
   }
