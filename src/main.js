@@ -13,7 +13,7 @@ import './registerServiceWorker'
 
 const routes = [
     {
-        path: '/wpcedit/',
+        path: '/wpcedit',
         component: HomeView,
     },
     {
