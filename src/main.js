@@ -13,30 +13,34 @@ import './registerServiceWorker'
 
 const routes = [
     {
-        path: '/wpcedit',
-        component: HomeView,
+        path: '/wpcedit/',
+        component: HomeView
     },
     {
-        path: '/wpcedit/fullframe',
+        path: '/wpcedit/fullframe/',
+        name: 'fullframe',
         component: FullFrameView
     },
     {
-        path: '/wpcedit/sprites',
+        path: '/wpcedit/sprites/',
+        name: 'sprites',
         component: SpritesView
     },
     {
-        path: '/wpcedit/checksum',
+        path: '/wpcedit/checksum/',
+        name: 'checksum',
         component: ChecksumView
     },
     {
-        path: '/wpcedit/settings',
+        path: '/wpcedit/settings/',
+        name: 'settings',
         component: SettingsView
     }
 ]
 
 const router = createRouter({
     history: createWebHistory(),
-    routes,
+    routes
 })
 
 

@@ -7,5 +7,5 @@ module.exports = defineConfig({
     appleMobileWebAppCapable: 'no'
   },
   transpileDependencies: true,
-  publicPath: process.env.NODE_ENV === "production" ? "/wpcedit/" : "/",
+  publicPath: "/wpcedit/",
 })
