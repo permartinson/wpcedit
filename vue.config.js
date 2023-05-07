@@ -7,5 +7,5 @@ module.exports = defineConfig({
     appleMobileWebAppCapable: 'no'
   },
   transpileDependencies: true,
-  publicPath: "/wpcedit/",
+  publicPath: "/wpcedit",
 })

@@ -82,7 +82,7 @@ export default {
       continueUnload() {
         this.showAlert = false;
         MainStore.unloadRom();
-        this.$router.push('/wpcedit/');
+        this.$router.push('/wpcedit');
       }
     },
     components: {

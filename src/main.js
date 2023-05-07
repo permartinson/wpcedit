@@ -13,27 +13,23 @@ import './registerServiceWorker'
 
 const routes = [
     {
-        path: '/wpcedit/',
+        path: '/wpcedit',
         component: HomeView
     },
     {
-        path: '/wpcedit/fullframe/',
-        name: 'fullframe',
+        path: '/wpcedit/fullframe',
         component: FullFrameView
     },
     {
-        path: '/wpcedit/sprites/',
-        name: 'sprites',
+        path: '/wpcedit/sprites',
         component: SpritesView
     },
     {
-        path: '/wpcedit/checksum/',
-        name: 'checksum',
+        path: '/wpcedit/checksum',
         component: ChecksumView
     },
     {
-        path: '/wpcedit/settings/',
-        name: 'settings',
+        path: '/wpcedit/settings',
         component: SettingsView
     }
 ]
