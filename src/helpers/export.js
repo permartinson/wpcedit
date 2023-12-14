@@ -42,6 +42,26 @@ function writeBmp(arr, depth, width, height) {
     return window.btoa(data);
 }
 
+function saveDataAsFile(data,fileName,mimeType) {
+    // Generate and download data as a file
+    const blob = new Blob([data], {
+        type: mimeType
+    });
+    const url = window.URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.style = 'display: none';
+    a.click();
+    a.remove();
+
+    setTimeout(function() {
+        return window.URL.revokeObjectURL(url);
+    }, 1000);
+}
+
 function mirrorBits(n) {
     // Borrowed from https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-127.php
     let t = n.toString(2).split("");
@@ -55,4 +75,4 @@ function mirrorBits(n) {
 
 
 
-module.exports = { writeBmp, mirrorBits }
+module.exports = { writeBmp, mirrorBits, saveDataAsFile }
