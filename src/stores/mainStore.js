@@ -136,7 +136,9 @@ export const useMainStore = defineStore('mainStore', {
         setExportOption(option) {
             this.exportOption = option;
         },
-        exportAsDataArray(image) {
+        exportAsDataArray(source) {
+            // Work on a copy, so the image shown in the app is not changed by the export
+            const image = Uint8Array.from(source);
             // Mirror the bits because the DMD pixels are encoded in reverse
             for(let i=0; i<image.length; i++) {
                 image[i] = mirrorBits(image[i]);
@@ -148,7 +150,9 @@ export const useMainStore = defineStore('mainStore', {
             }
             return dataString;
         },
-        exportAs1bitBmp(image,inverted,width,height) {
+        exportAs1bitBmp(source,inverted,width,height) {
+            // Work on a copy, so the image shown in the app is not changed by the export
+            const image = Uint8Array.from(source);
             // Mirror the bits because the DMD pixels are encoded in reverse
             for(let i=0; i<image.length; i++) {
                 image[i] = mirrorBits(image[i]);

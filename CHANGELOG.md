@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unused dependencies: `fabric`, `intersection-observer`, `vue-intersection-observer`, `vue-observe-visibility`, `pinia-plugin-persist`, `@pixi/filter-bloom`, `worker-plugin`, `sass` and `sass-loader`.
 
 ### Fixed
+- "Export blend plane" did nothing for full frame images when exporting as BMP or data array, because of a misspelled method name (`blendImge`).
+- Exporting an image as BMP or as a data array mirrored (and for inverted BMP, inverted) the bits of the image shown in the app, so the display could be wrong after an export. The export now works on a copy.
 - Memory leak in the plasma display style: every time the large DMD view was redrawn (for example when stepping to the next image), 4,096 new dot sprites were added to the stage without removing the old ones. The dots are now created once and only change texture when the image changes.
 - `register-service-worker` is now a direct dependency. The app imports it, but only got it through WPCEdit.js 0.4.4, and the library no longer includes it from 0.5.0.
 

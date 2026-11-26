@@ -337,7 +337,7 @@ export default {
             let image = this.mainImage();
             let index = this.planeIndices.current;
             if(planeToExport == 1) {
-                image = this.blendImge();
+                image = this.blendImage();
                 index = this.planeIndices.blend;
             }
             if(this.exportOption == 0) { // png export is handled within the main dmd component:
