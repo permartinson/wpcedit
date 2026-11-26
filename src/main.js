@@ -1,7 +1,6 @@
 import { createApp } from 'vue';
 import {createRouter, createWebHistory} from "vue-router";
 import store from "./stores/store.js";
-import VueObserveVisibility from 'vue-observe-visibility'
 
 import App from './App.vue';
 import HomeView from './views/HomeView.vue';
@@ -45,4 +44,4 @@ router.afterEach((to) => {
     to.meta.transition = 'fade';
 })
 
-createApp(App).use(VueObserveVisibility).use(store).use(router).mount('#app');
+createApp(App).use(store).use(router).mount('#app');
