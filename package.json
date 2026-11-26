@@ -25,7 +25,7 @@
     "vue-intersection-observer": "^0.1.9",
     "vue-observe-visibility": "^1.0.0",
     "vue-router": "^4.1.6",
-    "wpcedit": "^0.4.4"
+    "wpcedit": "^0.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -53,7 +53,16 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {}
+    "rules": {
+      "camelcase": [
+        "warn",
+        {
+          "properties": "always",
+          "ignoreDestructuring": true,
+          "ignoreImports": true
+        }
+      ]
+    }
   },
   "browserslist": [
     "> 1%",
