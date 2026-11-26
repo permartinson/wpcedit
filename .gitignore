@@ -1,0 +1,30 @@
+# Dependencies (installed with npm install)
+node_modules/
+
+# Build output (npm run build). Deployed to the gh-pages branch.
+dist/
+
+# macOS
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local settings
+.env.local
+.env.*.local
+
+# Editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ROM files are copyrighted and must never be committed
+*.rom
+roms/
