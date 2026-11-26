@@ -23,7 +23,6 @@ export default {
   },
   data() {
     return {
-        pixiApp: new PIXI.Application({ background: '#0C0C0C', width: 1024+32, height: 256+32 }),
         doExport: false
     }
   },
@@ -42,22 +41,23 @@ export default {
         this.drawPlain(this.settings.displayStyle);
       }
     },
-    drawPlasmaStyle() {
+    setupPlasmaStyle() {
+        // Everything here is done once per component. The PIXI objects are
+        // kept outside data() so that Vue does not make them reactive.
         const DISPLAY_W = 1024;
         const DISPLAY_H = 256;
         const DOT_SIZE = 8;
         const DISPLAY_MARGIN = 2*DOT_SIZE;
         const IMAGE_SIZE = 128*32;
 
-        const level0 = this.getDotTeture(0);
-        const level1 = this.getDotTeture(1);
-        const level2 = this.getDotTeture(2);
-        const level3 = this.getDotTeture(3);
-
-        const texture0 = PIXI.Texture.from(level0);
-        const texture1 = PIXI.Texture.from(level1);
-        const texture2 = PIXI.Texture.from(level2);
-        const texture3 = PIXI.Texture.from(level3);
+        // one texture per brightness level, shared by all dots
+        this.dotTextures = [0, 1, 2, 3].map((level) => PIXI.Texture.from(this.getDotTeture(level)));
+        // the textures are SVG files that load in the background: render again when each one is ready
+        this.dotTextures.forEach((texture) => {
+            if(!texture.baseTexture.valid) {
+                texture.baseTexture.once('loaded', () => this.renderPlasma());
+            }
+        });
 
         const dmdDiv = this.$refs.container;
         dmdDiv.appendChild(this.pixiApp.view);
@@ -72,23 +72,17 @@ export default {
         graphics.zIndex = 1;
         container.addChild(graphics);
 
+        // create the 4096 dots once; drawPlasmaStyle() only changes their texture
+        this.dots = [];
         for (let i = 0; i < IMAGE_SIZE; i++) {
-            let level = 0;
-            level = this.getDotLevel(this.image0,this.image1,i);
-            let dot = new PIXI.Sprite(texture0);
-            if(level==1) {
-                dot = new PIXI.Sprite(texture3);
-            } else if(level==0.6) {
-                dot = new PIXI.Sprite(texture2);
-            } else if(level==0.4) {
-                dot = new PIXI.Sprite(texture1);
-            }
+            const dot = new PIXI.Sprite(this.dotTextures[0]);
             dot.width = 8;
             dot.height = 8;
             dot.x = (i % 128) * DOT_SIZE + DISPLAY_MARGIN;
             dot.y = Math.floor(i / 128) * DOT_SIZE + DISPLAY_MARGIN;
             dot.zIndex = 1000;
             container.addChild(dot);
+            this.dots.push(dot);
         }
         // defining the post-effect filters for the display
         const blur = new PIXI.BlurFilter(1.5);
@@ -97,6 +91,31 @@ export default {
         const adj = new AdjustmentFilter({blue:0.55,green:0.75,gamma:0.8,saturation:0.85});
 
         this.pixiApp.stage.filters = [blur, bloom, bloom2, adj];
+    },
+    drawPlasmaStyle() {
+        if(!this.dots) {
+            this.setupPlasmaStyle();
+        }
+        const textures = this.dotTextures;
+        for (let i = 0; i < this.dots.length; i++) {
+            const level = this.getDotLevel(this.image0,this.image1,i);
+            let texture = textures[0];
+            if(level==1) {
+                texture = textures[3];
+            } else if(level==0.6) {
+                texture = textures[2];
+            } else if(level==0.4) {
+                texture = textures[1];
+            }
+            this.dots[i].texture = texture;
+        }
+        this.renderPlasma();
+    },
+    renderPlasma() {
+        // the display is only rendered when the image changes, not 60 times per second
+        if(this.pixiApp && this.pixiApp.renderer) {
+            this.pixiApp.render();
+        }
     },
     drawPlain(style) {
       let color =  "225, 225, 225";
@@ -190,6 +209,10 @@ export default {
       }
     }
   },
+  created() {
+    // autoStart: false stops PIXI from redrawing the display (with four filters) on every frame
+    this.pixiApp = new PIXI.Application({ background: '#0C0C0C', width: 1024+32, height: 256+32, autoStart: false });
+  },
   mounted() {
     this.drawImage();
   },
@@ -201,6 +224,8 @@ export default {
   beforeUnmount() {
     // kill the app when not used so we don't end up with a huge amount parallel processes
     this.pixiApp.destroy();
+    this.pixiApp = null;
+    this.dots = null;
   }
 }
 
