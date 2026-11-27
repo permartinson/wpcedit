@@ -1,0 +1,103 @@
+# The Shadow (cpu-u6l2), 1994, WPC DCS
+fullframe list list 0: e2264c6fa34c
+fullframe list list 1: c2b7ab0029ff
+fullframe list list 2: e2264c6fa34c
+fullframe list list 3: c2b7ab0029ff
+fullframe list list 4: a22be71d7acf
+fullframe list list 5: 2c403410641e
+fullframe list list 6: a16932fc4c7d
+fullframe list list 7: 675e1e5089ac
+fullframe list list 8: ff1d01a05545
+fullframe list list 9: 0a792bd5be0e
+fullframe list list 10: 29a5ec4ed21a
+fullframe list list 11: 81b6cab5997c
+fullframe list list 12: 9af66cc23c98
+fullframe list list 13: 1556a1d29653
+fullframe list list 14: 431ebec678f8
+fullframe list list 15: 23d9ef49cc2c
+fullframe list list 16: b2bf5c17ba9f
+fullframe list list 17: d1e772a52003
+fullframe list list 18: 9ef25713c413
+fullframe list list 19: ce5071c1bd5c
+fullframe list list 20: e806db05d8be
+fullframe list list 21: f40170e07938
+fullframe list list 22: 2adb32100d18
+fullframe list list 23: 9421147e0ec2
+fullframe list list 24: a0f069cd62a5
+fullframe list list 25: 21dd02226632
+fullframe list list 26: dcdfe3e4d5cc
+fullframe list list 27: cec005068be7
+fullframe list list 28: 002202189112
+fullframe list list 29: dc5a0dc69efe
+fullframe list list 30: 889af48cedc7
+fullframe list list 31: 13b3ddca08b6
+fullframe list list 32: 002202189112
+fullframe list list 33: 4f6484f2c6c6
+fullframe list list 34: a30907995c3f
+fullframe list list 35: 92f57a639bea
+fullframe window main 0: 9f1f381c12fb
+fullframe window sub 1: 1c2d7b7ef21e
+fullframe window sub 2: 8566593bfaf0
+fullframe window sub 3: acb392552a0c
+fullframe window sub 4: 1a8c31e8062f
+fullframe window blend main 0: 783153e0c6d7
+fullframe window blend sub 1: 1c2d7b7ef21e
+fullframe window blend sub 2: 1a8c31e8062f
+fullframe window blend sub 3: acb392552a0c
+fullframe window blend sub 4: 1a8c31e8062f
+fullframe window merge main 0: 9f1f381c12fb
+fullframe window merge sub 1: 1c2d7b7ef21e
+fullframe window merge sub 2: 8566593bfaf0
+fullframe window merge sub 3: 1c2d7b7ef21e
+fullframe window merge sub 4: 1a8c31e8062f
+fullframe window next main 0: 45eba1d13c30
+fullframe window next sub 1: 8566593bfaf0
+fullframe window next sub 2: 1c2d7b7ef21e
+fullframe window next sub 3: 1a8c31e8062f
+fullframe window next sub 4: 9b38afb88969
+sprite list list 0: 61f46ed5079c
+sprite list list 1: 11d0a1681d16
+sprite list list 2: 96b2bd91e86f
+sprite list list 3: 78d26c9524d4
+sprite list list 4: 61f46ed5079c
+sprite list list 5: db48cc75d21a
+sprite list list 6: 680cd6e5b044
+sprite list list 7: 650e23e3708e
+sprite list list 8: 3e867c9f05b7
+sprite list list 9: 8bbae93caec2
+sprite list list 10: 5973dedc49c3
+sprite list list 11: 64cf99c1bfd6
+sprite list list 12: 6ca519e19903
+sprite list list 13: 0ae4684c90a2
+sprite list list 14: 2ca7b7d3b279
+sprite list list 15: 505958c38cc8
+sprite list list 16: c364bd70b697
+sprite list list 17: 55be99340525
+sprite list list 18: 866f94c44369
+sprite list list 19: d5892a4a751a
+sprite list list 20: 3844df31b430
+sprite list list 21: 354ad9da2977
+sprite list list 22: 79185f4b567c
+sprite list list 23: 32c12fcf6c90
+sprite list list 24: f0451de59fbe
+sprite list list 25: 903bdd4b58a0
+sprite list list 26: a358ef93e439
+sprite list list 27: e300f33cf1ec
+sprite list list 28: 8a4482c3c5ca
+sprite list list 29: 6debe43e170c
+sprite list list 30: 99e898201f21
+sprite list list 31: 25efffb951ae
+sprite list list 32: 91ebad38ec8b
+sprite list list 33: b5992342fb77
+sprite list list 34: 5fcfad7e428d
+sprite list list 35: f1033402e95a
+sprite window main 0: 81127dd4e0c4
+sprite window sub 1: 5f284e7b1ed9
+sprite window sub 2: c7c0c3ddd03f
+sprite window moved main 0: 15a0a3d97ea2
+sprite window moved sub 1: b89232472171
+sprite window moved sub 2: c7c0c3ddd03f
+fullframe window style 2 main 0: 9f1f381c12fb
+fullframe window style 3 main 0: cd86c13f7ebe
+fullframe window style 4 main 0: cd86c13f7ebe
+fullframe window style 1 main 0: 9f1f381c12fb

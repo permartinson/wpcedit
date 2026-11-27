@@ -1,0 +1,103 @@
+# Medieval Madness (mm_g11.1_0), 1997, WPC-95
+fullframe list list 0: c2abc8459e38
+fullframe list list 1: 594e854efe83
+fullframe list list 2: de4268a34741
+fullframe list list 3: cd29b9bc370a
+fullframe list list 4: 00c5c8e8f70b
+fullframe list list 5: 57283f891e31
+fullframe list list 6: 11d1351a69ff
+fullframe list list 7: 33ea4a56dd9f
+fullframe list list 8: 9e20d9f31ec4
+fullframe list list 9: b10c0dd83db6
+fullframe list list 10: 204425ef32d4
+fullframe list list 11: 2e27bb1a139e
+fullframe list list 12: 3bcc81c31e10
+fullframe list list 13: 210c54b64447
+fullframe list list 14: 9255a9feade2
+fullframe list list 15: e92ba1727af9
+fullframe list list 16: f585905636b6
+fullframe list list 17: 1799179ad217
+fullframe list list 18: ff69894c50bb
+fullframe list list 19: f9a25a9b11d6
+fullframe list list 20: a5c7920a82e6
+fullframe list list 21: a26335fcd006
+fullframe list list 22: 579d4c9e3949
+fullframe list list 23: 2b26cefdcea4
+fullframe list list 24: df2db53e706e
+fullframe list list 25: 0c2d48921f26
+fullframe list list 26: 550075f983aa
+fullframe list list 27: cb45ed948cbf
+fullframe list list 28: 7cd5c977b8c6
+fullframe list list 29: 539a8deb00f4
+fullframe list list 30: 61f46ed5079c
+fullframe list list 31: d036db46886f
+fullframe list list 32: 61f46ed5079c
+fullframe list list 33: e7f0d72e2689
+fullframe list list 34: 61f46ed5079c
+fullframe list list 35: ee6dcb0a72af
+fullframe window main 0: 7aecd710b04b
+fullframe window sub 1: 585b4af71f77
+fullframe window sub 2: 23ac3375aa26
+fullframe window sub 3: dc9ed5c3dd6c
+fullframe window sub 4: e6f54727d07a
+fullframe window blend main 0: 77ceb0bc8878
+fullframe window blend sub 1: 585b4af71f77
+fullframe window blend sub 2: 893aecd0bddf
+fullframe window blend sub 3: dc9ed5c3dd6c
+fullframe window blend sub 4: e6f54727d07a
+fullframe window merge main 0: 518d17dab911
+fullframe window merge sub 1: 46c58291de6e
+fullframe window merge sub 2: 23ac3375aa26
+fullframe window merge sub 3: 46c58291de6e
+fullframe window merge sub 4: e6f54727d07a
+fullframe window next main 0: c77131e25d5b
+fullframe window next sub 1: 23ac3375aa26
+fullframe window next sub 2: 46c58291de6e
+fullframe window next sub 3: e6f54727d07a
+fullframe window next sub 4: 5136b93a12b6
+sprite list list 0: 61f46ed5079c
+sprite list list 1: 11d0a1681d16
+sprite list list 2: 96b2bd91e86f
+sprite list list 3: 78d26c9524d4
+sprite list list 4: 61f46ed5079c
+sprite list list 5: db48cc75d21a
+sprite list list 6: 680cd6e5b044
+sprite list list 7: 650e23e3708e
+sprite list list 8: 3e867c9f05b7
+sprite list list 9: 8bbae93caec2
+sprite list list 10: 5973dedc49c3
+sprite list list 11: 64cf99c1bfd6
+sprite list list 12: 6ca519e19903
+sprite list list 13: 0ae4684c90a2
+sprite list list 14: 2ca7b7d3b279
+sprite list list 15: 505958c38cc8
+sprite list list 16: c364bd70b697
+sprite list list 17: 55be99340525
+sprite list list 18: 866f94c44369
+sprite list list 19: d5892a4a751a
+sprite list list 20: 3844df31b430
+sprite list list 21: 354ad9da2977
+sprite list list 22: 79185f4b567c
+sprite list list 23: 32c12fcf6c90
+sprite list list 24: f0451de59fbe
+sprite list list 25: 903bdd4b58a0
+sprite list list 26: a358ef93e439
+sprite list list 27: e300f33cf1ec
+sprite list list 28: 8a4482c3c5ca
+sprite list list 29: 6debe43e170c
+sprite list list 30: 99e898201f21
+sprite list list 31: 25efffb951ae
+sprite list list 32: 91ebad38ec8b
+sprite list list 33: b5992342fb77
+sprite list list 34: 5fcfad7e428d
+sprite list list 35: f1033402e95a
+sprite window main 0: 81127dd4e0c4
+sprite window sub 1: 5f284e7b1ed9
+sprite window sub 2: c7c0c3ddd03f
+sprite window moved main 0: 15a0a3d97ea2
+sprite window moved sub 1: b89232472171
+sprite window moved sub 2: c7c0c3ddd03f
+fullframe window style 2 main 0: 7aecd710b04b
+fullframe window style 3 main 0: 7793579eaa0e
+fullframe window style 4 main 0: 7793579eaa0e
+fullframe window style 1 main 0: 7aecd710b04b

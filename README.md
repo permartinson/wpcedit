@@ -13,14 +13,25 @@ Requires Node.js 22.12 or later.
 
 ```
 npm install
+npx playwright install chromium  # once, the browser for the screen tests
 npm run dev      # start the app at http://localhost:8080/wpcedit/
 npm run dev:local  # the same, with the library source in ../js/wpcedit.js
 npm run lint
-npm test         # tests; the ROM smoke test uses ROM files in ../js/wpcedit.js/roms
-npm run check    # lint, tests and build
+npm test         # tests; the ROM tests use ROM files in ../js/wpcedit.js/roms
+npm run test:update  # regenerate the export facit after an intended change
+npm run test:screen  # screen tests in Chromium (needs npm run build first)
+npm run test:screen:update  # regenerate the screen facit after an intended change
+npm run test:coverage  # which parts of src/ the Vitest tests run (report in coverage/)
+npm run check    # lint, tests, build and screen tests; exit code 0 = OK
 npm run build    # build the app to dist/
 npm run preview  # serve the built app
 ```
+
+`npm run check` also runs on GitHub for every push and pull request (`.github/workflows/check.yml`). The tests that need a ROM are skipped there, because the ROM files are not on GitHub.
+
+To run `npm run check` with your ROM files before every push, turn on the git hook in `.githooks/` once with `npm run hooks:on`. Turn it off again with `npm run hooks:off`.
+
+ROM files are copyrighted and are never committed. The tests read them from the folder in `WPCEDIT_ROMS`, or from `../js/wpcedit.js/roms`. Tests that need a ROM are shown as skipped when it is missing.
 
 ## Feature wishlist
 

@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- `npm run test:coverage`: a report of which parts of `src/` the Vitest tests run (with `@vitest/coverage-v8`). The components are mostly covered by the screen tests, which are not part of the report.
+- GitHub Actions runs `npm run check` on every push and pull request. The tests that need a ROM are skipped there.
+- A git hook (`.githooks/pre-push`) that runs `npm run check` with the ROM files before a push. Turn it on with `npm run hooks:on` and off with `npm run hooks:off`.
+- Screen tests with Playwright (`npm run test:screen`, also part of `npm run check`): the built app is opened in Chromium, a ROM is loaded and every view is visited, including the image windows with blend, merge and moving a sprite, all display styles, the checksum view and a reload that restores the ROM from the cache. Every DMD is read back dot by dot and compared with a facit in `tests/screen/facit/`; the image lists are also compared with what the library decodes. Uses Fish Tales, The Shadow, Medieval Madness and Cactus Canyon. Run `npx playwright install chromium` once before the first run.
+- More tests (phase R): export as data array, BMP and inverted BMP (every pixel checked), the blend export, merging planes, placing sprites in a full frame image, updating and disabling the checksum, loading the last ROM from the cache, and the file name of a downloaded ROM.
+- Export facit (`tests/facit/`): a fingerprint of the data array, BMP and inverted BMP export of a selection of full frame images, merged images and sprites for each ROM, compared on every `npm test`. Regenerate with `npm run test:update` after an intended change. The files hold fingerprints only, never ROM data.
 - Tests with Vitest (`npm test`): the formatting and export helpers, the main store's export functions, and a smoke test that loads every ROM file through the store. ROM files are read from `WPCEDIT_ROMS` or `../js/wpcedit.js/roms` and are never committed; without them the smoke test is skipped. `npm run check` runs lint, tests and build.
 - `npm run dev:local` starts the app with the source code of the WPCEdit.js library in `../js/wpcedit.js` instead of the version from npm, so changes to the library show up in the app right away.
 - This changelog.

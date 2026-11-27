@@ -1,0 +1,55 @@
+# Full frame images
+fullframe 0: data a96a73459368  bmp 72fb32c6a287  bmp-inverted 50e539eda3b9
+fullframe 1: data 5be08aeb201a  bmp 0e5b32de49c3  bmp-inverted fcabc1a2aa6f
+fullframe 999: data 34abe96e8a54  bmp 14e8ade083a3  bmp-inverted cd82d8555cc3
+fullframe 1999: data f98b2189d00b  bmp 30fe84848fdf  bmp-inverted 69390edb455a
+
+# Merged images
+merged 0+1: data 5be08aeb201a  bmp 0e5b32de49c3  bmp-inverted fcabc1a2aa6f
+merged 999+1000: data d8b5e7d61bdf  bmp a00bc9524dc3  bmp-inverted 0ed99980b9ba
+
+# Sprites (table/index)
+sprite 0/1: data fbc6bc3729b4  bmp 30fe84848fdf  bmp-inverted 69390edb455a
+sprite 0/127: data e911792920be  bmp 15aab6a4d54f  bmp-inverted 0f3b94e3cb1b
+sprite 1/32: data fbc6bc3729b4  bmp 30fe84848fdf  bmp-inverted 69390edb455a
+sprite 1/127: data e911792920be  bmp 15aab6a4d54f  bmp-inverted 0f3b94e3cb1b
+sprite 2/32: data 4199cd06a26a  bmp 30fe84848fdf  bmp-inverted 69390edb455a
+sprite 2/93: data 6c5a8a2bbe56  bmp cd02196e8046  bmp-inverted ebeadc94b517
+sprite 3/44: data 71dc1137e549  bmp 3c04a1d24aef  bmp-inverted ecfcecb52ea1
+sprite 3/57: data 9958d9bea173  bmp 7cba7bd45833  bmp-inverted 4069bda6495e
+sprite 4/44: data 71dc1137e549  bmp 3c04a1d24aef  bmp-inverted ecfcecb52ea1
+sprite 4/57: data ef5de11808a8  bmp ab4529bbe00b  bmp-inverted 89c1178b43dc
+sprite 5/44: data 71dc1137e549  bmp 3c04a1d24aef  bmp-inverted ecfcecb52ea1
+sprite 5/57: data da6c6a381828  bmp b1f84b05b3f7  bmp-inverted 0f3beeaee5fe
+sprite 6/44: data 71dc1137e549  bmp 3c04a1d24aef  bmp-inverted ecfcecb52ea1
+sprite 6/57: data 90b09d66f09f  bmp aea8d85a3390  bmp-inverted 0543ed024f1d
+sprite 7/44: data 71dc1137e549  bmp 3c04a1d24aef  bmp-inverted ecfcecb52ea1
+sprite 7/57: data 288201c33c4d  bmp 2ba211be80f7  bmp-inverted abf4cd91d667
+sprite 8/44: data 71dc1137e549  bmp 3c04a1d24aef  bmp-inverted ecfcecb52ea1
+sprite 8/57: data ff7d50ecfff2  bmp af4a71303fcf  bmp-inverted 09d68edae5b2
+sprite 9/44: data 71dc1137e549  bmp 3c04a1d24aef  bmp-inverted ecfcecb52ea1
+sprite 9/57: data d7bd0b5f7e14  bmp 0f86342bd13c  bmp-inverted ae10ffaac69e
+sprite 10/44: data 71dc1137e549  bmp 3c04a1d24aef  bmp-inverted ecfcecb52ea1
+sprite 10/57: data 2053ca1c76d8  bmp 09adb981c898  bmp-inverted 3ab2e7e896f5
+sprite 11/44: data b6f54eb23529  bmp 049676e0e4b1  bmp-inverted 716a5dfaf449
+sprite 11/57: data 8074614ec688  bmp 90dc0ca4a80b  bmp-inverted 3a6b8ef9e166
+sprite 12/32: data fbc6bc3729b4  bmp 30fe84848fdf  bmp-inverted 69390edb455a
+sprite 12/127: data e911792920be  bmp 15aab6a4d54f  bmp-inverted 0f3b94e3cb1b
+sprite 13/32: data acb073a82b2a  bmp 30fe84848fdf  bmp-inverted 69390edb455a
+sprite 13/191: data d7ce7a01a5e1  bmp 12077daab8a2  bmp-inverted 4c50810d69af
+sprite 14/32: data acb073a82b2a  bmp 30fe84848fdf  bmp-inverted 69390edb455a
+sprite 14/191: data 37d769d320e7  bmp be43bcb677bf  bmp-inverted 4e202047a2a3
+sprite 15/32: data fbc6bc3729b4  bmp 30fe84848fdf  bmp-inverted 69390edb455a
+sprite 15/191: data 7af4dc49138b  bmp 9943d55cf0b7  bmp-inverted ede9b6c35cfd
+sprite 16/32: data fbc6bc3729b4  bmp 30fe84848fdf  bmp-inverted 69390edb455a
+sprite 16/191: data 90545feda5d8  bmp 9dcaa4e7471f  bmp-inverted c9ee710d8be9
+sprite 17/32: data fbc6bc3729b4  bmp 30fe84848fdf  bmp-inverted 69390edb455a
+sprite 17/191: data 81624f74ce0e  bmp ac7327344e13  bmp-inverted b59d40da6a44
+sprite 18/32: data 77397eac3219  bmp 30fe84848fdf  bmp-inverted 69390edb455a
+sprite 18/228: data b30630b0ef24  bmp bacc82ada3df  bmp-inverted 734ced01d688
+sprite 19/1: data 21d3a7fd76a7  bmp 38e8ac7cf2f9  bmp-inverted 9aef1699c776
+sprite 19/26: data 59ee7e35780b  bmp c48d3badf57d  bmp-inverted b717bb77077d
+sprite 20/32: data acb073a82b2a  bmp 30fe84848fdf  bmp-inverted 69390edb455a
+sprite 20/90: data a5c4020cdc94  bmp 367ba2ca439c  bmp-inverted feb981596928
+sprite 21/1: data 9d19e19f986e  bmp 62845b85c4be  bmp-inverted d60f74a8be7d
+sprite 21/2: data 9383cd6fd577  bmp 5ff26fe2abea  bmp-inverted cd001ae8a5b5

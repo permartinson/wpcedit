@@ -1,0 +1,103 @@
+# Cactus Canyon (cc_g11.1_3), 1998, WPC-95
+fullframe list list 0: de4268a34741
+fullframe list list 1: cd29b9bc370a
+fullframe list list 2: e8567c5e041a
+fullframe list list 3: c23954cb347f
+fullframe list list 4: a90cadeee604
+fullframe list list 5: 7cea5fa1cbd9
+fullframe list list 6: 500974ed418c
+fullframe list list 7: db3ec0afa008
+fullframe list list 8: bbbd2bc7c68f
+fullframe list list 9: 83f526acba29
+fullframe list list 10: df3f6dc9cbff
+fullframe list list 11: c07c1b80978a
+fullframe list list 12: 6a12fd27e4d6
+fullframe list list 13: 80b61dc38c6f
+fullframe list list 14: 363d57dc0b3a
+fullframe list list 15: a5587b3fab5f
+fullframe list list 16: 00e620b51916
+fullframe list list 17: b551b291efbb
+fullframe list list 18: 28e0ba17c8c0
+fullframe list list 19: 2b403a5837d5
+fullframe list list 20: 78f39d3eeae2
+fullframe list list 21: 96c8f27d2856
+fullframe list list 22: cade183a0bf8
+fullframe list list 23: 685d363aa354
+fullframe list list 24: 33b97b30dd58
+fullframe list list 25: 074e6c3155b6
+fullframe list list 26: 57c3662abe8d
+fullframe list list 27: 74ed7caec5ee
+fullframe list list 28: e2bcb28ec985
+fullframe list list 29: fd2af91fbaf1
+fullframe list list 30: 05ff6cce1ceb
+fullframe list list 31: 0138e0d8d461
+fullframe list list 32: 005aee39db47
+fullframe list list 33: 7b588c631c25
+fullframe list list 34: 154e13f32dd3
+fullframe list list 35: 047bb172a032
+fullframe window main 0: f8388a48d78e
+fullframe window sub 1: 46c58291de6e
+fullframe window sub 2: 8c7462b935cf
+fullframe window sub 3: 0c55b9aa55e0
+fullframe window sub 4: cc14b8a0fda9
+fullframe window blend main 0: 40833b2e5871
+fullframe window blend sub 1: 46c58291de6e
+fullframe window blend sub 2: e6f54727d07a
+fullframe window blend sub 3: 0c55b9aa55e0
+fullframe window blend sub 4: cc14b8a0fda9
+fullframe window merge main 0: c24ab820495d
+fullframe window merge sub 1: ea22a2b6e790
+fullframe window merge sub 2: 8c7462b935cf
+fullframe window merge sub 3: ea22a2b6e790
+fullframe window merge sub 4: cc14b8a0fda9
+fullframe window next main 0: fe421419ccc4
+fullframe window next sub 1: 8c7462b935cf
+fullframe window next sub 2: ea22a2b6e790
+fullframe window next sub 3: cc14b8a0fda9
+fullframe window next sub 4: 623ebd51347e
+sprite list list 0: 61f46ed5079c
+sprite list list 1: 11d0a1681d16
+sprite list list 2: 96b2bd91e86f
+sprite list list 3: 78d26c9524d4
+sprite list list 4: 61f46ed5079c
+sprite list list 5: db48cc75d21a
+sprite list list 6: 680cd6e5b044
+sprite list list 7: 650e23e3708e
+sprite list list 8: 3e867c9f05b7
+sprite list list 9: 8bbae93caec2
+sprite list list 10: 5973dedc49c3
+sprite list list 11: 64cf99c1bfd6
+sprite list list 12: 6ca519e19903
+sprite list list 13: 0ae4684c90a2
+sprite list list 14: 2ca7b7d3b279
+sprite list list 15: 505958c38cc8
+sprite list list 16: c364bd70b697
+sprite list list 17: 55be99340525
+sprite list list 18: 866f94c44369
+sprite list list 19: d5892a4a751a
+sprite list list 20: 3844df31b430
+sprite list list 21: 354ad9da2977
+sprite list list 22: 79185f4b567c
+sprite list list 23: 32c12fcf6c90
+sprite list list 24: f0451de59fbe
+sprite list list 25: 903bdd4b58a0
+sprite list list 26: a358ef93e439
+sprite list list 27: e300f33cf1ec
+sprite list list 28: 8a4482c3c5ca
+sprite list list 29: 6debe43e170c
+sprite list list 30: 99e898201f21
+sprite list list 31: 25efffb951ae
+sprite list list 32: 91ebad38ec8b
+sprite list list 33: b5992342fb77
+sprite list list 34: 5fcfad7e428d
+sprite list list 35: f1033402e95a
+sprite window main 0: 81127dd4e0c4
+sprite window sub 1: 5f284e7b1ed9
+sprite window sub 2: c7c0c3ddd03f
+sprite window moved main 0: 15a0a3d97ea2
+sprite window moved sub 1: b89232472171
+sprite window moved sub 2: c7c0c3ddd03f
+fullframe window style 2 main 0: f8388a48d78e
+fullframe window style 3 main 0: 5bbadbf049d1
+fullframe window style 4 main 0: 5bbadbf049d1
+fullframe window style 1 main 0: f8388a48d78e

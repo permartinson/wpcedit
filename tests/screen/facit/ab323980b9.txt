@@ -1,0 +1,103 @@
+# Fish Tales (fshtl_5), 1992, WPC Fliptronics
+fullframe list list 0: 2dae22ea360f
+fullframe list list 1: e6e0343a2659
+fullframe list list 2: 6bd472341777
+fullframe list list 3: b6aeab3b47ca
+fullframe list list 4: 687e6fd82580
+fullframe list list 5: e015542b644d
+fullframe list list 6: e1d70f2e1e37
+fullframe list list 7: c4cb0f671c8a
+fullframe list list 8: 9569455c12d9
+fullframe list list 9: c210a40be91e
+fullframe list list 10: 4c9836c7de68
+fullframe list list 11: 2d0a63d62001
+fullframe list list 12: 337ce8d075bc
+fullframe list list 13: f66173b48918
+fullframe list list 14: 5f4964e0589a
+fullframe list list 15: 7025dbf4fcc7
+fullframe list list 16: f424003b597a
+fullframe list list 17: 459ee043f19c
+fullframe list list 18: 4a2a40ec06f9
+fullframe list list 19: 10068d57fb9e
+fullframe list list 20: 26e646cf7698
+fullframe list list 21: bedc1b168c76
+fullframe list list 22: 0688fc026df0
+fullframe list list 23: e40de893844e
+fullframe list list 24: 51b2e2e4b63e
+fullframe list list 25: 16eeef17d12e
+fullframe list list 26: 5e293f863721
+fullframe list list 27: 24e913ea56bf
+fullframe list list 28: d19e085472de
+fullframe list list 29: 7056e3cd3d77
+fullframe list list 30: dc5217f13cfc
+fullframe list list 31: cb72fd418839
+fullframe list list 32: 31a778bd0bbe
+fullframe list list 33: a0bfae1c3308
+fullframe list list 34: 25104577967a
+fullframe list list 35: 429f020b83ae
+fullframe window main 0: 4328e0aa70d8
+fullframe window sub 1: f9535310bd76
+fullframe window sub 2: ebd229b06c4b
+fullframe window sub 3: bc9e25d432a8
+fullframe window sub 4: 2bbbdc392ff2
+fullframe window blend main 0: d1ea83fffa75
+fullframe window blend sub 1: f9535310bd76
+fullframe window blend sub 2: f78847a95a64
+fullframe window blend sub 3: bc9e25d432a8
+fullframe window blend sub 4: 2bbbdc392ff2
+fullframe window merge main 0: 4063a13acc54
+fullframe window merge sub 1: 3db5c6c61fca
+fullframe window merge sub 2: ebd229b06c4b
+fullframe window merge sub 3: 3db5c6c61fca
+fullframe window merge sub 4: 2bbbdc392ff2
+fullframe window next main 0: 48c2204a9857
+fullframe window next sub 1: ebd229b06c4b
+fullframe window next sub 2: 3db5c6c61fca
+fullframe window next sub 3: 2bbbdc392ff2
+fullframe window next sub 4: 149585662996
+sprite list list 0: 61f46ed5079c
+sprite list list 1: 11d0a1681d16
+sprite list list 2: 96b2bd91e86f
+sprite list list 3: 78d26c9524d4
+sprite list list 4: 61f46ed5079c
+sprite list list 5: db48cc75d21a
+sprite list list 6: 680cd6e5b044
+sprite list list 7: 650e23e3708e
+sprite list list 8: 3e867c9f05b7
+sprite list list 9: 8bbae93caec2
+sprite list list 10: 5973dedc49c3
+sprite list list 11: 64cf99c1bfd6
+sprite list list 12: 6ca519e19903
+sprite list list 13: 0ae4684c90a2
+sprite list list 14: 2ca7b7d3b279
+sprite list list 15: 505958c38cc8
+sprite list list 16: c364bd70b697
+sprite list list 17: 55be99340525
+sprite list list 18: 866f94c44369
+sprite list list 19: d5892a4a751a
+sprite list list 20: 3844df31b430
+sprite list list 21: 354ad9da2977
+sprite list list 22: 79185f4b567c
+sprite list list 23: 32c12fcf6c90
+sprite list list 24: f0451de59fbe
+sprite list list 25: 903bdd4b58a0
+sprite list list 26: a358ef93e439
+sprite list list 27: e300f33cf1ec
+sprite list list 28: 8a4482c3c5ca
+sprite list list 29: 6debe43e170c
+sprite list list 30: 99e898201f21
+sprite list list 31: 25efffb951ae
+sprite list list 32: 91ebad38ec8b
+sprite list list 33: b5992342fb77
+sprite list list 34: 5fcfad7e428d
+sprite list list 35: f1033402e95a
+sprite window main 0: 81127dd4e0c4
+sprite window sub 1: 5f284e7b1ed9
+sprite window sub 2: c7c0c3ddd03f
+sprite window moved main 0: 15a0a3d97ea2
+sprite window moved sub 1: b89232472171
+sprite window moved sub 2: c7c0c3ddd03f
+fullframe window style 2 main 0: 4328e0aa70d8
+fullframe window style 3 main 0: c68a87b193d8
+fullframe window style 4 main 0: c68a87b193d8
+fullframe window style 1 main 0: 4328e0aa70d8

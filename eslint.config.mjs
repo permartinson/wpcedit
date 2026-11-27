@@ -3,7 +3,7 @@ import pluginVue from 'eslint-plugin-vue';
 import globals from 'globals';
 
 export default [
-  { ignores: ['dist/', 'node_modules/', 'dev-dist/'] },
+  { ignores: ['dist/', 'node_modules/', 'dev-dist/', 'coverage/', 'test-results/'] },
   js.configs.recommended,
   ...pluginVue.configs['flat/essential'],
   {
@@ -19,7 +19,7 @@ export default [
   },
   {
     // Node scripts, tests and config files
-    files: ['scripts/**/*.js', 'tests/**/*.js', '*.config.{js,mjs}'],
+    files: ['scripts/**/*.js', 'tests/**/*.{js,mjs}', '*.config.{js,mjs}'],
     languageOptions: { globals: { ...globals.node } },
   },
   {

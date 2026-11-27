@@ -4,6 +4,13 @@ node_modules/
 # Build output (npm run build). Deployed to the gh-pages branch.
 dist/
 
+# Results of failed screen tests (npm run test:screen)
+test-results/
+playwright-report/
+
+# Test coverage report (npm run test:coverage)
+coverage/
+
 # macOS
 .DS_Store
 
