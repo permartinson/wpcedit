@@ -75,4 +75,4 @@ function mirrorBits(n) {
 
 
 
-module.exports = { writeBmp, mirrorBits, saveDataAsFile }
+export { writeBmp, mirrorBits, saveDataAsFile }

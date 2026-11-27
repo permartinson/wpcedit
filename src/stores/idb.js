@@ -1,5 +1,5 @@
 // Borrowed from https://javascript.plainenglish.io/vue-3-with-vuex-for-simple-caching-with-indexeddb-aec46e9df9de
-const { openDB } = require('idb');
+import { openDB } from 'idb';
 const dbPromise = openDB('wpcEdit', 1, {
     upgrade(db) {
         db.createObjectStore('keyval');
@@ -22,4 +22,4 @@ async function getAll() {
 
 }
 
-module.exports = { get, set, keys, getAll }
+export { get, set, keys, getAll }

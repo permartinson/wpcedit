@@ -7,6 +7,18 @@ The app is configured as a PWA, which means it may be used as a desktop app if t
 
 This is an updated version of Garrett Lee's original WPC Edit software, now built as a web app instead of the original Windows-only app. The user interface has been completely revised and now offers a complete overview of the DMD graphics. The user does no longer have to step through all frames to get to a specific one. The app also includes a checksum editor.
 
+## Development
+
+Requires Node.js 22.12 or later.
+
+```
+npm install
+npm run dev      # start the app at http://localhost:8080/wpcedit/
+npm run lint
+npm run build    # build the app to dist/
+npm run preview  # serve the built app
+```
+
 ## Feature wishlist
 
 - Include a hex editor

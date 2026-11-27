@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ESLint `camelcase` rule (`npm run lint`), the same naming standard as in the WPCEdit.js library. It only warns for now, while the old names are being renamed.
 
 ### Changed
+- The app is now built with Vite instead of Vue CLI, which is no longer actively maintained. Start it with `npm run dev` (`npm run serve` still works) at the same address as before, http://localhost:8080/wpcedit/. The app looks and works the same. Babel and `core-js` are no longer used, and ESLint is updated from 7 to 10 (`eslint.config.mjs`).
+- `package-lock.json` now downloads all packages from the npm registry; most of them pointed to the mirror `registry.npmmirror.com`.
 - Updated the WPCEdit.js library from 0.4.4 to 0.5.1. No change in how the app uses it.
 - The plasma display is faster: it is only rendered when the image changes instead of 60 times per second, the filters are created once, and the PIXI app is no longer made reactive by Vue.
 

@@ -7,4 +7,4 @@ function toHex(value, zeroes=2) {
     return '0x' + pad(value.toString(16),zeroes).toUpperCase();
 }
 
-module.exports = { pad, toHex }
+export { pad, toHex }

@@ -107,7 +107,7 @@ export const useMainStore = defineStore('mainStore', {
             return sprite;
         },
         getSpriteAsFullFrame(sprite,posX,posY) {
-            return sprite = WPCEdit.variableSizedImage.placeInFullFrame(sprite,posX,posY)
+            return WPCEdit.variableSizedImage.placeInFullFrame(sprite,posX,posY)
         },
         mergePlanes(img1,plane2) {
             return WPCEdit.fullFrameImage.mergePlanes(img1,plane2);

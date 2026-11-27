@@ -11,6 +11,10 @@ import {AdjustmentFilter} from '@pixi/filter-adjustment';
 import { storeToRefs } from 'pinia';
 import store from "../../stores/store.js";
 import { useMainStore } from '../../stores/mainStore.js';
+import plasmaDot0 from '../../assets/graphics/dmd-sprites/plasma/0.svg';
+import plasmaDot1 from '../../assets/graphics/dmd-sprites/plasma/1.svg';
+import plasmaDot2 from '../../assets/graphics/dmd-sprites/plasma/2.svg';
+import plasmaDot3 from '../../assets/graphics/dmd-sprites/plasma/3.svg';
 
 const MainStore = useMainStore(store);
 
@@ -161,13 +165,13 @@ export default {
     getDotTeture(level) {
         switch(level){
             case 1: 
-                return require('@/assets/graphics/dmd-sprites/plasma/1.svg');
+                return plasmaDot1;
             case 2: 
-                return require('@/assets/graphics/dmd-sprites/plasma/2.svg');
+                return plasmaDot2;
             case 3: 
-                return require('@/assets/graphics/dmd-sprites/plasma/3.svg');
+                return plasmaDot3;
             default:
-                return require('@/assets/graphics/dmd-sprites/plasma/0.svg');
+                return plasmaDot0;
         }
     },
     downloadPng() {
