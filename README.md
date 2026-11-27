@@ -16,6 +16,8 @@ npm install
 npm run dev      # start the app at http://localhost:8080/wpcedit/
 npm run dev:local  # the same, with the library source in ../js/wpcedit.js
 npm run lint
+npm test         # tests; the ROM smoke test uses ROM files in ../js/wpcedit.js/roms
+npm run check    # lint, tests and build
 npm run build    # build the app to dist/
 npm run preview  # serve the built app
 ```

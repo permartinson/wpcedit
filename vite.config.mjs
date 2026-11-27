@@ -83,4 +83,9 @@ export default defineConfig(({ mode }) => ({
       allow: mode === 'locallib' ? ['.', '../js/wpcedit.js'] : ['.'],
     },
   },
+  test: {
+    // localStorage, window and document for the store and export helpers
+    environment: 'happy-dom',
+    include: ['tests/**/*.test.js'],
+  },
 }));

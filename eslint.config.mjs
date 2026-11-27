@@ -18,8 +18,8 @@ export default [
     },
   },
   {
-    // Node scripts and config files
-    files: ['scripts/**/*.js', '*.config.{js,mjs}'],
+    // Node scripts, tests and config files
+    files: ['scripts/**/*.js', 'tests/**/*.js', '*.config.{js,mjs}'],
     languageOptions: { globals: { ...globals.node } },
   },
   {

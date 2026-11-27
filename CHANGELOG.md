@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Tests with Vitest (`npm test`): the formatting and export helpers, the main store's export functions, and a smoke test that loads every ROM file through the store. ROM files are read from `WPCEDIT_ROMS` or `../js/wpcedit.js/roms` and are never committed; without them the smoke test is skipped. `npm run check` runs lint, tests and build.
 - `npm run dev:local` starts the app with the source code of the WPCEdit.js library in `../js/wpcedit.js` instead of the version from npm, so changes to the library show up in the app right away.
 - This changelog.
 - ESLint `camelcase` rule (`npm run lint`), the same naming standard as in the WPCEdit.js library. It only warns for now, while the old names are being renamed.
