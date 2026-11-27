@@ -14,6 +14,7 @@ Requires Node.js 22.12 or later.
 ```
 npm install
 npm run dev      # start the app at http://localhost:8080/wpcedit/
+npm run dev:local  # the same, with the library source in ../js/wpcedit.js
 npm run lint
 npm run build    # build the app to dist/
 npm run preview  # serve the built app

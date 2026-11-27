@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "serve": "vite",
+    "dev:local": "vite --mode locallib",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",

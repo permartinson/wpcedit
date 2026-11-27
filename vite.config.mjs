@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
@@ -21,7 +22,22 @@ function redirectToBase() {
   };
 }
 
-export default defineConfig({
+// `npm run dev:local` uses the source code of the WPCEdit.js library in
+// ../js/wpcedit.js instead of the version installed from npm, so changes to
+// the library show up in the app right away, without building it first.
+const localLibrary = fileURLToPath(new URL('../js/wpcedit.js/src/WPCEdit.ts', import.meta.url));
+
+function libraryAlias(mode) {
+  if (mode !== 'locallib') {
+    return {};
+  }
+  if (!existsSync(localLibrary)) {
+    throw new Error(`dev:local needs the WPCEdit.js library at ${localLibrary}`);
+  }
+  return { wpcedit: localLibrary };
+}
+
+export default defineConfig(({ mode }) => ({
   // The app is published at https://permartinson.github.io/wpcedit/
   base: '/wpcedit/',
   plugins: [
@@ -56,10 +72,15 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      ...libraryAlias(mode),
     },
   },
   server: {
     // Same address as before: http://localhost:8080/wpcedit/
     port: 8080,
+    fs: {
+      // let the dev server read the library folder in dev:local mode
+      allow: mode === 'locallib' ? ['.', '../js/wpcedit.js'] : ['.'],
+    },
   },
-});
+}));
