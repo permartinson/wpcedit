@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- A keyboard-only screen test (`tests/screen/keyboard.spec.mjs`) with Fish Tales and Medieval Madness: loads a ROM, opens and steps through full frame images and sprites, moves a sprite, disables the checksum and unloads the ROM using only Tab, Enter, Esc and the arrow keys. It checks that focus moves into each window, stays there and comes back when it closes.
 - Arrow keys in the image windows: ← and → show the previous and next image or sprite, and with Shift they step 2. The keys are shown at the bottom of the window.
 - Accessibility checks (phase C): the screen tests run axe on every view, image window and dialog against WCAG 2.2 A and AA (`tests/screen/accessibility.spec.mjs`, with `@axe-core/playwright`). Problems that are known today are listed in the test and are fixed step by step; a new problem fails the test. ESLint also checks the templates with `eslint-plugin-vuejs-accessibility`.
 - `npm run test:coverage`: a report of which parts of `src/` the Vitest tests run (with `@vitest/coverage-v8`). The components are mostly covered by the screen tests, which are not part of the report.
