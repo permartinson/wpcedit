@@ -7,10 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-28
+
 ### Added
 - An "Accessibility" section in the README with the rules every change follows (WCAG 2.2 AA), and how they are tested.
 - A keyboard-only screen test (`tests/screen/keyboard.spec.mjs`) with Fish Tales and Medieval Madness: loads a ROM, opens and steps through full frame images and sprites, moves a sprite, disables the checksum and unloads the ROM using only Tab, Enter, Esc and the arrow keys. It checks that focus moves into each window, stays there and comes back when it closes.
-- Arrow keys in the image windows: ← and → show the previous and next image or sprite, and with Shift they step 2. The keys are shown at the bottom of the window.
+- Arrow keys in the image windows: ← and → show the previous and next image or sprite, and with Shift they step 2.
 - Accessibility checks (phase C): the screen tests run axe on every view, image window and dialog against WCAG 2.2 A and AA (`tests/screen/accessibility.spec.mjs`, with `@axe-core/playwright`). Problems that are known today are listed in the test and are fixed step by step; a new problem fails the test. ESLint also checks the templates with `eslint-plugin-vuejs-accessibility`.
 - `npm run test:coverage`: a report of which parts of `src/` the Vitest tests run (with `@vitest/coverage-v8`). The components are mostly covered by the screen tests, which are not part of the report.
 - GitHub Actions runs `npm run check` on every push and pull request. The tests that need a ROM are skipped there.
@@ -45,4 +47,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Memory leak in the plasma display style: every time the large DMD view was redrawn (for example when stepping to the next image), 4,096 new dot sprites were added to the stage without removing the old ones. The dots are now created once and only change texture when the image changes.
 - `register-service-worker` is now a direct dependency. The app imports it, but only got it through WPCEdit.js 0.4.4, and the library no longer includes it from 0.5.0.
 
-[Unreleased]: https://github.com/permartinson/wpcedit/commits/main
+[Unreleased]: https://github.com/permartinson/wpcedit/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/permartinson/wpcedit/releases/tag/v0.2.0
