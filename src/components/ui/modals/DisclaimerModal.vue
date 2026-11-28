@@ -1,5 +1,5 @@
 <template>
-    <BaseModal :show="show">
+    <BaseModal :show="show" label="Important!">
         <ModalHeader
             :stepBtns="false"
             :closeBtn="false"

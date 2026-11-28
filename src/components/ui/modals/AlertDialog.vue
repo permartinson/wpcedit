@@ -1,22 +1,63 @@
 <template>
-    <div v-if="show" class="alert-mask">
-      <div class="alert-container" @click.stop>
+  <Teleport to="body">
+    <div v-if="show" class="alert-mask" role="presentation" @keydown="keydown">
+      <div class="alert-container" ref="container" role="alertdialog" aria-modal="true" :aria-labelledby="titleId" tabindex="-1" @click.stop>
         <div class="header-container">
-          <p class="title">{{ title }}</p>
+          <p class="title" :id="titleId">{{ title }}</p>
         </div>
           <slot></slot>
       </div>
     </div>
+  </Teleport>
 </template>
 
 <script>
+import { closeModal, keepTabInside, openModal } from '../../../helpers/modalFocus.js';
+
+let dialogCount = 0;
+
+// A small window with a message and buttons. Esc emits cancel; the window
+// that uses it decides what that means.
 export default {
   name: 'AlertDialog',
   props: {
     show: Boolean,
     title: String
   },
+  emits: ['cancel'],
+  data() {
+    return {
+      titleId: `alert-title-${++dialogCount}`,
+      returnFocusTo: null
+    }
+  },
+  watch: {
+    show: {
+      immediate: true,
+      handler(show) {
+        if (show) {
+          this.$nextTick(() => {
+            this.returnFocusTo = openModal(this.$refs.container);
+          });
+        } else if (this.returnFocusTo !== null) {
+          closeModal(this.returnFocusTo);
+          this.returnFocusTo = null;
+        }
+      }
+    }
+  },
+  beforeUnmount() {
+    if (this.returnFocusTo !== null) {
+      closeModal(this.returnFocusTo);
+    }
+  },
   methods: {
+    keydown(event) {
+      keepTabInside(event, this.$refs.container);
+      if (event.key === 'Escape') {
+        this.$emit('cancel');
+      }
+    }
   },
   updated() {
     // prevent background scroll when the modal is open:

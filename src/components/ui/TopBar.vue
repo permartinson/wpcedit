@@ -6,12 +6,12 @@
       <SaveSection :romIsLoaded="romIsLoaded" :romIsAltered="romIsAltered" :fileName="fileName" @save="download" @unload="unload">
       </SaveSection>
     </div>
-      <AlertDialog :show="showAlert" title="Warning!">
+      <AlertDialog :show="showAlert" title="Warning!" @cancel="cancel">
         <p class="body-sm">You have made modifications to this ROM.</p>
         <p class="body-sm">Make sure you save any changes you want to keep before unload, or they will be lost!</p>
         <CheckBox @change="checkboxClicked" :checked="false" label="Don't show this warning again" ref="alertCheck"></CheckBox>
         <div class="alert-footer">
-          <StandardButton type="primary" @click="cancel">Cancel</StandardButton>
+          <StandardButton type="primary" @click="cancel" data-autofocus>Cancel</StandardButton>
           <StandardButton @click="continueClicked">Unload ROM</StandardButton>
         </div>
     </AlertDialog>

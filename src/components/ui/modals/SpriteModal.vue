@@ -1,9 +1,10 @@
 <template>
-    <BaseModal :show="show" @close="$emit('close')">
+    <BaseModal :show="show" labelledBy="sprite-window-title" @close="$emit('close')" @step="step">
         <ModalHeader
             :stepBtns="true"
             :closeBtn="true"
             :title="title"
+            titleId="sprite-window-title"
             itemName="sprite"
             @next="goNext()"
             @prev="goPrev()"
@@ -53,6 +54,7 @@
         <ModalFooter>
             <ExportSection @export-main="exportCurrentSprite(0)" @export-blend="exportCurrentSprite(1)" :options="options">
             </ExportSection>
+            <p class="key-hint">Keys: ← → previous or next sprite, with Shift 2 steps. Esc closes.</p>
         </ModalFooter>
     </BaseModal>
 </template>
@@ -140,6 +142,10 @@ export default {
         }
     },
     methods: {
+        // The arrow keys (see BaseModal): -1 or 1, or -2 or 2 with Shift
+        step(steps) {
+            ({ '-2': this.goP2, '-1': this.goPrev, '1': this.goNext, '2': this.goN2 })[steps]();
+        },
         image0() {
             const indices = this.planeIndices;
             const sprite = MainStore.getSpriteAt(this.table,indices.current);
@@ -291,5 +297,10 @@ export default {
 }
 .modal-body {
     margin: 0 var(--space-md);
+}
+.key-hint {
+    margin-top: var(--space-sm);
+    font-size: var(--text-sm);
+    color: var(--grey8);
 }
 </style>

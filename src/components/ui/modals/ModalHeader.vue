@@ -8,10 +8,10 @@
                 <MinimalButton @click="this.$emit('next2')" size="small" class="fast-btn" :aria-label="`Forward 2 ${itemName}s`"><SmallIcon type="double-right"></SmallIcon></MinimalButton>
             </div>
         </div>
-        <div class="area middle-area"><p class="title">{{ title }}</p></div>
+        <div class="area middle-area"><p class="title" :id="titleId">{{ title }}</p></div>
         <div class="area right-area">
             <div v-if="closeBtn" class="close-area">
-                <MinimalButton @click="$emit('close')" size="large" aria-label="Close"><LargeIcon type="close"></LargeIcon></MinimalButton>
+                <MinimalButton @click="$emit('close')" size="large" aria-label="Close" data-autofocus><LargeIcon type="close"></LargeIcon></MinimalButton>
             </div>
         </div>
    </div>
@@ -31,6 +31,8 @@ export default {
     },
   props: {
     title: String,
+    // An id for the title, so that the window can use it as its name
+    titleId: String,
     closeBtn: Boolean,
     stepBtns: Boolean,
     // What the step buttons step through, for their names: "Next image"

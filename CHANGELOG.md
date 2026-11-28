@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Arrow keys in the image windows: ← and → show the previous and next image or sprite, and with Shift they step 2. The keys are shown at the bottom of the window.
 - Accessibility checks (phase C): the screen tests run axe on every view, image window and dialog against WCAG 2.2 A and AA (`tests/screen/accessibility.spec.mjs`, with `@axe-core/playwright`). Problems that are known today are listed in the test and are fixed step by step; a new problem fails the test. ESLint also checks the templates with `eslint-plugin-vuejs-accessibility`; these rules only warn for now.
 - `npm run test:coverage`: a report of which parts of `src/` the Vitest tests run (with `@vitest/coverage-v8`). The components are mostly covered by the screen tests, which are not part of the report.
 - GitHub Actions runs `npm run check` on every push and pull request. The tests that need a ROM are skipped there.
@@ -21,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ESLint `camelcase` rule (`npm run lint`), the same naming standard as in the WPCEdit.js library. It only warns for now, while the old names are being renamed.
 
 ### Changed
+- Accessibility (phase C): the image windows, the disclaimer and the warning and error dialogs are dialogs for screen readers. When one opens, focus moves into it and the page behind it can no longer be reached; Tab stays inside the window; Esc closes it (in the warnings it means Cancel, the disclaimer still needs an answer), and focus goes back to where it was. The windows are moved to the end of the page (`<Teleport>`), which does not change how they look.
 - Accessibility (phase C): the buttons on the home view are links, and the images in the full frame and sprite lists are buttons, so they can be reached with Tab and opened with Enter. Every image has a name for screen readers, for example "Full frame image 17" or "Sprite 0x41 (A), table 3". To keep Tab from passing hundreds of images, only 50 are in the Tab order at first; a button that is only visible when it has focus adds 50 more. Icon buttons (previous, next, close, move) and the form fields have names. A stray "¨" above the home view buttons is removed.
 - The app is now built with Vite instead of Vue CLI, which is no longer actively maintained. Start it with `npm run dev` (`npm run serve` still works) at the same address as before, http://localhost:8080/wpcedit/. The app looks and works the same. Babel and `core-js` are no longer used, and ESLint is updated from 7 to 10 (`eslint.config.mjs`).
 - `package-lock.json` now downloads all packages from the npm registry; most of them pointed to the mirror `registry.npmmirror.com`.

@@ -11,10 +11,10 @@
     <FileDrop v-if="!romIsLoaded" @loaded="loadRom"></FileDrop>
   </div>
 
-    <AlertDialog :show="showError" title="Error">
+    <AlertDialog :show="showError" title="Error" @cancel="okClicked">
       <p class="body-sm">{{ errorMessage }}</p>
       <div class="alert-footer">
-        <StandardButton type="primary" @click="okClicked" class="alert-ok-btn">OK</StandardButton>
+        <StandardButton type="primary" @click="okClicked" class="alert-ok-btn" data-autofocus>OK</StandardButton>
       </div>
     </AlertDialog>
     <DisclaimerModal :show="showDisclaimer" @agree="agreeClicked" @disagree="disagreeClicked"></DisclaimerModal>

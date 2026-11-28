@@ -1,9 +1,10 @@
 <template>
-    <BaseModal :show="show" @close="$emit('close')">
+    <BaseModal :show="show" labelledBy="fullframe-window-title" @close="$emit('close')" @step="step">
         <ModalHeader
             :stepBtns="true"
             :closeBtn="true"
             :title="title"
+            titleId="fullframe-window-title"
             @next="goNext()"
             @prev="goPrev()"
             @next2="goN2()"
@@ -61,6 +62,7 @@
         <ModalFooter>
             <ExportSection @export-main="exportCurrentFrame(0)" @export-blend="exportCurrentFrame(1)" :options="options">
             </ExportSection>
+            <p class="key-hint">Keys: ← → previous or next image, with Shift 2 steps. Esc closes.</p>
         </ModalFooter>
     </BaseModal>
 </template>
@@ -161,6 +163,10 @@ export default {
         }
     },
     methods: {
+        // The arrow keys (see BaseModal): -1 or 1, or -2 or 2 with Shift
+        step(steps) {
+            ({ '-2': this.goP2, '-1': this.goPrev, '1': this.goNext, '2': this.goN2 })[steps]();
+        },
         image0() {
             return this.mainImage();
         },
@@ -392,5 +398,10 @@ export default {
 .in-between {
     margin-top: var(--space-sm);
     margin-bottom: var(--space-md);
+}
+.key-hint {
+    margin-top: var(--space-sm);
+    font-size: var(--text-sm);
+    color: var(--grey8);
 }
 </style>
