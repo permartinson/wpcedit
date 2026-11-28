@@ -59,7 +59,7 @@ export default {
 
 .table-header {
   width: 100%;
-  color: var(--grey7);
+  color: var(--grey8);
   grid-column-end: span 4;
 }
 @media screen and (max-width: 1024px) {

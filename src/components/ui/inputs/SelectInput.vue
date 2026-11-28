@@ -58,7 +58,7 @@ select::-ms-expand {
     width: 100%;
     border: 1px solid var(--grey7);
     background-color:var(--grey1);
-    color: var(--grey7);
+    color: var(--grey8);
     font-size: 1.25rem;
     cursor: pointer;
     line-height: 1.1;

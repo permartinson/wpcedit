@@ -92,7 +92,7 @@ export default {
 .title {
   font-size: var(--text-md);
   font-weight: 700;
-  color: var(--grey7);
+  color: var(--grey8);
 }
 .btn-next {
   margin-left: var(--space-sm);

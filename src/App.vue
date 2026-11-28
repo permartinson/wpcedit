@@ -153,6 +153,27 @@ export default {
     color: var(--accent);
   }
 
+  /* Keyboard focus (WCAG 2.4.7): an orange ring on everything that can be
+     reached with Tab. Only shown for keyboard use, not on mouse clicks. */
+  :focus-visible {
+    outline: 0.2rem solid var(--accent);
+    outline-offset: 0.2rem;
+  }
+  /* Elements that only get focus from the code (dialog containers, headings) */
+  [tabindex="-1"]:focus-visible {
+    outline: none;
+  }
+
+  /* No fades or slides for those who have turned on reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   .fade-enter-active {
     transition: all 1s ease-out;
   }

@@ -3,8 +3,9 @@
  * checked with axe (https://github.com/dequelabs/axe-core) against WCAG 2.2
  * level A and AA.
  *
- * knownViolations lists the axe rules that are known to fail today, per view.
- * The list is emptied step by step in phase C (see Claude/fas-C.md):
+ * knownViolations lists the axe rules that are known to fail, per view. It
+ * has been empty since phase C (see Claude/fas-C.md). Only add a rule there
+ * with a comment on why, and a plan to fix it:
  * - a rule that fails but is not in the list fails the test (a new problem)
  * - a rule that is in the list but no longer fails also fails the test, so
  *   that the list is kept up to date when a problem has been fixed
@@ -28,14 +29,14 @@ const romName =
 
 const wcagTags = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
-// The axe rules that fail today, per view. Phase C empties this list.
+// The axe rules that are known to fail, per view. Keep it empty.
 const knownViolations = {
   'home without a ROM': [],
   'disclaimer': [],
   'home with a ROM': [],
   'full frame list': [],
   'full frame window': [],
-  'sprite list': ['color-contrast'],
+  'sprite list': [],
   'sprite window': [],
   'checksum tool': [],
   'settings': [],

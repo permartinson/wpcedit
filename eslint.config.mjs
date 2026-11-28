@@ -8,15 +8,15 @@ export default [
   js.configs.recommended,
   ...pluginVue.configs['flat/essential'],
   // Accessibility rules for the templates (WCAG 2.2 AA, see Claude/fas-C.md).
-  // Only warns for now; they become errors when phase C is done.
+  // A problem is an error, so npm run check fails on it.
   ...pluginVueA11y.configs['flat/recommended'].map((config) => ({
     ...config,
-    rules: Object.fromEntries(Object.keys(config.rules ?? {}).map((rule) => [rule, 'warn'])),
+    rules: Object.fromEntries(Object.keys(config.rules ?? {}).map((rule) => [rule, 'error'])),
   })),
   {
     rules: {
       // A label around its field (as in CheckBox.vue) is enough, no id needed
-      'vuejs-accessibility/label-has-for': ['warn', { required: { some: ['nesting', 'id'] } }],
+      'vuejs-accessibility/label-has-for': ['error', { required: { some: ['nesting', 'id'] } }],
     },
   },
   {

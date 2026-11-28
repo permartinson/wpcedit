@@ -111,7 +111,7 @@
     position: relative;
     font-size: var(--text-sm);
     font-weight: 700;
-    color: var(--grey7);
+    color: var(--grey8);
     text-align: center;
     margin: .4rem;
     margin-right: 1rem;

@@ -66,6 +66,11 @@ export default {
     border-radius: 1.5px;
     opacity: 0;
 }
+/* The checkbox itself is invisible, so its keyboard focus is shown on the box */
+.input:focus-visible ~ .box {
+    outline: 0.2rem solid var(--accent);
+    outline-offset: 0.2rem;
+}
 .input:checked ~ .box:after {
     opacity: 1;
 }
