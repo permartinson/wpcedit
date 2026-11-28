@@ -143,10 +143,9 @@ describe('placing a sprite in a full frame image', () => {
     expect(litPixels(image).sort()).toEqual(asStrings(expectedPixels(x, y)));
   });
 
-  // Known bug: the part of the sprite that is outside the right edge comes
-  // back on the left side of the next row. To be fixed in the library in a
-  // separate step. Remove .fails when it is fixed.
-  it.fails('cuts the sprite off at the right edge (known bug)', () => {
+  // Before WPCEdit.js 0.5.2, the part outside the right edge came back on
+  // the left side of the next row
+  it('cuts the sprite off at the right edge', () => {
     const image = store.getSpriteAsFullFrame(sprite, 125, 5);
     expect(litPixels(image).sort()).toEqual(asStrings(expectedPixels(125, 5)));
   });
