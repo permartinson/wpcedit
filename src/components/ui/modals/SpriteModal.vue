@@ -13,14 +13,15 @@
             @close="$emit('close')">
         </ModalHeader>
         <div class="modal-body">
-            <MainDmd :image0="image0()" :image1="image1()" :index="planeIndices.current" ref="main"></MainDmd>
+            <MainDmd :image0="image0()" :image1="image1()" :index="planeIndices.current" ref="main" :label="mainDescription()"></MainDmd>
             <div class="sub-dmds">
                 <div>
                     <SubDmd
                         class="plane plane0"
                         :title="this.currPlaneTitle"
                         :isEnabled="true"
-                        :image="image0()">
+                        :image="image0()"
+                        :label="describeSprite(planeIndices.current, xOffset0, yOffset0)">
                     </SubDmd>
                     <OffsetControl
                         spriteName="this sprite"
@@ -35,6 +36,7 @@
                         class="plane plane1"
                         :checkbox="this.blendPlaneLabel"
                         :image="blendImage()"
+                        :label="describeSprite(planeIndices.blend, xOffset1, yOffset1)"
                         :isEnabled="this.doBlend"
                         :navBtns="true"
                         @next="goToNextBlendPlane()"
@@ -67,7 +69,7 @@ import ExportSection from '../ExportSection.vue';
 import MainDmd from '../../dmd/MainDmd.vue';
 import SubDmd from '../../dmd/SubDmd.vue';
 import OffsetControl from '../../ui/OffsetControl.vue';
-import { toHex } from '../../../helpers/formatting.js';
+import { spriteName, toHex } from '../../../helpers/formatting.js';
 import { storeToRefs } from 'pinia';
 import store from "../../../stores/store.js";
 import { useMainStore } from '../../../stores/mainStore.js';
@@ -142,6 +144,19 @@ export default {
         }
     },
     methods: {
+        // Descriptions of the images for screen readers:
+        // "Sprite 0x41 (A), table 3, 8 × 10 pixels, placed at x 60, y 11"
+        describeSprite(index, x, y) {
+            const sprite = MainStore.getSpriteAt(this.table, index);
+            return `${spriteName(index, this.table)}, ${sprite.width} × ${sprite.height} pixels, placed at x ${x}, y ${y}`;
+        },
+        mainDescription() {
+            let description = this.describeSprite(this.planeIndices.current, this.xOffset0, this.yOffset0);
+            if(this.doBlend) {
+                description += `, blended with ${this.describeSprite(this.planeIndices.blend, this.xOffset1, this.yOffset1)}`;
+            }
+            return description;
+        },
         // The arrow keys (see BaseModal): -1 or 1, or -2 or 2 with Shift
         step(steps) {
             ({ '-2': this.goP2, '-1': this.goPrev, '1': this.goNext, '2': this.goN2 })[steps]();

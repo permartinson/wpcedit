@@ -8,7 +8,7 @@
         <MinimalButton @click="this.$emit('next');" size="small" class="btn-next">Next<SmallIcon type="right"></SmallIcon></MinimalButton>
       </div>
     </div>
-    <div class="dmd-container">
+    <div class="dmd-container" role="img" :aria-label="label">
       <canvas ref="dmd" width="512" height="128" class="dmd"></canvas>
     </div>
   </div>
@@ -32,7 +32,9 @@ export default {
     title: String,
     checkbox: String,
     navBtns: Boolean,
-    isEnabled: Boolean
+    isEnabled: Boolean,
+    // What the image shows, for screen readers
+    label: String
   },
   methods: {
     drawImage() {

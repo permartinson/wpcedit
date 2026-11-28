@@ -6,7 +6,7 @@
                     <div class="setting">
                     <p class="headline">Display style</p>
 
-<MainDmd :image0="image0" :image1="image1" :index="0" :key="settings.displayStyle" ref="main"></MainDmd>
+<MainDmd :image0="image0" :image1="image1" :index="0" :key="settings.displayStyle" ref="main" label="Preview of the display style"></MainDmd>
 
 <SelectInput name="dmdstyle" label="Display style" :options="dmdOptions" @change="setDmdStyle" class="dmd-style-select"></SelectInput>
 </div>
@@ -26,7 +26,7 @@
 <p class="headline">Warning messages</p>
 <p class="body-sm">You may reset all warning messages in WPC Edit to see them again.</p>
 <StandardButton size="small" @click="resetWarnings()">Reset all warning messages</StandardButton>
-<p class="label-md text-accent feedback-msg" :class="warningsFeedbackClass" ref="disableFeedback">{{ warningsFeedbackMsg }}</p>
+<p class="label-md text-accent feedback-msg" role="status" :class="warningsFeedbackClass" ref="disableFeedback">{{ warningsFeedbackMsg }}</p>
 </div>
 
                 </div>

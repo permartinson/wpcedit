@@ -8,6 +8,7 @@
 
 <script>
 import ListDmd from '../../dmd/ListDmd.vue'
+import { spriteName } from '../../../helpers/formatting.js'
 import { useIntersectionObserver } from '@vueuse/core'
 import { ref } from 'vue'
 
@@ -25,12 +26,8 @@ export default {
     ListDmd
   },
   computed: {
-    // "Sprite 0x41 (A), table 3". Fonts use ASCII codes, so the printable
-    // ones are shown as the character too.
     spriteLabel() {
-      const code = `0x${this.index.toString(16).toUpperCase().padStart(2, '0')}`;
-      const character = this.index > 0x20 && this.index < 0x7f ? ` (${String.fromCharCode(this.index)})` : '';
-      return `Sprite ${code}${character}, table ${this.tableIndex}`;
+      return spriteName(this.index, this.tableIndex);
     }
   },
   data() {

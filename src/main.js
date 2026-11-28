@@ -40,7 +40,6 @@ const router = createRouter({
 
 
 router.afterEach((to) => {
-    document.title = "WPC Edit";
     to.meta.transition = 'fade';
 })
 

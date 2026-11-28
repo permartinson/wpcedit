@@ -12,18 +12,20 @@
             @close="$emit('close')">
         </ModalHeader>
         <div class="modal-body">
-            <MainDmd :image0="image0()" :image1="image1()" :index="planeIndices.current" ref="main"></MainDmd>
+            <MainDmd :image0="image0()" :image1="image1()" :index="planeIndices.current" ref="main" :label="mainDescription()"></MainDmd>
             <div class="sub-dmds blend">
                 <SubDmd
                     class="plane plane0"
                     :title="this.currPlaneTitle"
                     :isEnabled="true"
-                    :image="mainImage()">
+                    :image="mainImage()"
+                    :label="imageName(planeIndices.current)">
                 </SubDmd>
                 <SubDmd
                     class="plane plane1"
                     :checkbox="this.blendPlaneLabel"
                     :image="blendImage()"
+                    :label="imageName(planeIndices.blend)"
                     :isEnabled="this.doBlend"
                     :navBtns="true"
                     @next="goToNextBlendPlane()"
@@ -36,6 +38,7 @@
                     <SubDmd
                         :checkbox="this.merge0Label"
                         :image="merge0Image()"
+                        :label="imageName(planeIndices.merge0)"
                         :isEnabled="this.doMerge0"
                         :navBtns="true"
                         @next="goToNextMerge0Plane()"
@@ -49,6 +52,7 @@
                         class="plane plane1"
                         :checkbox="this.merge1Label"
                         :image="merge1Image()"
+                        :label="imageName(planeIndices.merge1)"
                         :isEnabled="this.doMerge1"
                         :navBtns="true"
                         @next="goToNextMerge1Plane()"
@@ -163,6 +167,24 @@ export default {
         }
     },
     methods: {
+        // Descriptions of the images for screen readers
+        imageName(index) {
+            return `Image ${index}, encoding ${toHex(MainStore.getFullFrameImageAt(index).type)}`;
+        },
+        mainDescription() {
+            const indices = this.planeIndices;
+            let description = this.imageName(indices.current);
+            if(this.doBlend) {
+                description += `, blended with image ${indices.blend}`;
+            }
+            if(this.doMerge0) {
+                description += `, image ${indices.merge0} applied on top`;
+            }
+            if(this.doMerge1) {
+                description += `, image ${indices.merge1} applied on top`;
+            }
+            return description;
+        },
         // The arrow keys (see BaseModal): -1 or 1, or -2 or 2 with Shift
         step(steps) {
             ({ '-2': this.goP2, '-1': this.goPrev, '1': this.goNext, '2': this.goN2 })[steps]();

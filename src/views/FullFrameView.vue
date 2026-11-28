@@ -4,8 +4,8 @@
         <div class="content-wrapper">
         <PaginationBlock v-if="settings.dmdsPerPage>0" class="pagination" @next="nextPage" @prev="prevPage" @start="startPage"></PaginationBlock>
         <div class="fullframe-list" :key="currPage">
-          <FullFrameItem v-for="n in pageLength" :image="getFrame(n-1)" :key="n" :index="n-1" @open="openModal"
-            :label="`Full frame image ${pageOffset + n - 1}`" :tabbable="n <= tabLimit"></FullFrameItem>
+          <FullFrameItem v-for="n in pageLength" v-bind="getFrame(n-1)" :key="n" :index="n-1" @open="openModal"
+            :tabbable="n <= tabLimit"></FullFrameItem>
         </div>
         <MoreInTabOrder :shown="tabLimit" :total="pageLength" what="images" @more="showMoreInTabOrder('.list-item-fullframe')"></MoreInTabOrder>
       </div>
@@ -18,6 +18,7 @@
     import FullFrameModal from '../components/ui/modals/FullFrameModal.vue';
     import PaginationBlock from '../components/ui/PaginationBlock.vue';
     import MoreInTabOrder, { tabStep } from '../components/ui/MoreInTabOrder.vue';
+    import { toHex } from '../helpers/formatting.js';
     import store from "../stores/store.js";
     import { storeToRefs } from 'pinia';
     import { useMainStore } from '../stores/mainStore.js';
@@ -55,9 +56,6 @@
           }
     },
     computed: {
-      pageOffset() {
-        return this.currPage*this.pageLength;
-      },
       pageLength() {
         const setting = Number(this.settings.dmdsPerPage);
         if(setting == 0) {
@@ -89,7 +87,12 @@
       getFrame(index) {
         const offset = this.currPage*this.pageLength;
         index += offset;
-        return MainStore.getFullFrameImageAt(index).image;
+        // Read image and type at once: the library reuses one plane object.
+        const plane = MainStore.getFullFrameImageAt(index);
+        return {
+          image: plane.image,
+          label: `Full frame image ${index}, encoding ${toHex(plane.type)}`
+        };
       },
       nextPage() {
         this.currPage++;

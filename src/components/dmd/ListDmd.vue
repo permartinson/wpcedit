@@ -1,5 +1,5 @@
 <template>
-      <div class="dmd-container">
+      <div class="dmd-container" aria-hidden="true">
         <canvas ref="dmd" class="dmd" width="256" height="64"></canvas>
       </div>
 </template>

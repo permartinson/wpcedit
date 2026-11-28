@@ -132,3 +132,28 @@ test('every view passes axe, apart from the known problems', async ({ page }) =>
 
   test.info().annotations.push({ type: 'axe', description: JSON.stringify(found) });
 });
+
+test('views have a page title, move focus to the heading and describe images', async ({ page }) => {
+  test.skip(!romName, `no ROM files found in ${romFolder}`);
+
+  await page.goto('./');
+  await expect(page).toHaveTitle('Load ROM – WPC Edit');
+  await page.setInputFiles('input[type=file]', join(romFolder, romName));
+  await page.getByRole('button', { name: 'I understand and agree' }).click();
+  await expect(page).toHaveTitle('Home – WPC Edit');
+
+  await openFromHome(page, 'Full frame graphics');
+  await expect(page).toHaveTitle('Full frame graphics – WPC Edit');
+  await expect(page.getByRole('heading', { level: 1 })).toBeFocused();
+  const firstImage = page.locator('.list-item-fullframe').first();
+  await expect(firstImage).toHaveAttribute('aria-label', /^Full frame image 0, encoding 0x[0-9A-F]{2}$/);
+  await firstImage.click();
+  await expect(page.locator('.modal-container [role=img]').first()).toHaveAttribute('aria-label', /^Image 0, encoding 0x[0-9A-F]{2}/);
+  await page.keyboard.press('Escape');
+  await backToHome(page);
+  await expect(page.getByRole('heading', { level: 1 })).toBeFocused();
+
+  await openFromHome(page, 'Sprites and fonts');
+  await expect(page).toHaveTitle('Sprites and fonts – WPC Edit');
+  await expect(page.locator('.list-item-sprite').first()).toHaveAttribute('aria-label', /^Sprite 0x[0-9A-F]{2}.*, table \d+$/);
+});

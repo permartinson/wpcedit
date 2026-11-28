@@ -1,5 +1,5 @@
 <template>
-    <div class="dmd-container" ref="container">
+    <div class="dmd-container" ref="container" role="img" :aria-label="label">
       <canvas v-if="settings.displayStyle!= 0" ref="dmd" width="1024" height="256" class="dmd"></canvas>
     </div> 
 </template>
@@ -23,7 +23,9 @@ export default {
   props: {
     image0: Uint8Array,
     image1: Uint8Array,
-    index: Number
+    index: Number,
+    // What the image shows, for screen readers
+    label: String
   },
   data() {
     return {

@@ -34,12 +34,12 @@
                     <NumeralInput size="large" label="Desired game version" :value="Number(this.versionByte)" :maxlength="2" :min="1" :max="99" class="version-input" ref="version" @change="updateInput"></NumeralInput>
                     <StandardButton size="large" type="primary" @click="updateChecksum(value)">Update checksum</StandardButton>
                 </div>
-                <p class="label-md text-accent feedback-msg" :class="checksumFeedbackClass" ref="checksumFeedback">{{ checksumFeedbackMsg }}</p>
+                <p class="label-md text-accent feedback-msg" role="status" :class="checksumFeedbackClass" ref="checksumFeedback">{{ checksumFeedbackMsg }}</p>
                 <hr/>
                 <p class="headline">Disable checksum</p>
                 <p class="body-sm">The checksum may be temporarily disabled while debugging ROM. This is done by setting the fixup bytes to 0xFF00. This will also remove other startup tests. Once the modified ROM is ready, you should always insert a correct checksum using the tool above so that the game will alert you about any errors.</p>
                 <StandardButton size="large" type="primary" @click="disableChecksum()">Disable checksum</StandardButton>
-                <p class="label-md text-accent feedback-msg" :class="disableFeedbackClass" ref="disableFeedback">{{ disableFeedbackMsg }}</p>
+                <p class="label-md text-accent feedback-msg" role="status" :class="disableFeedbackClass" ref="disableFeedback">{{ disableFeedbackMsg }}</p>
             </div>
         </div>
     </div>

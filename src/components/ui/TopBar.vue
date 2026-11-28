@@ -1,7 +1,7 @@
 <template>
   <div class="bar-container">
     <div class="spacer back"><MinimalButton v-if="showBackButton" @click="goHome" size="large"><LargeIcon type="left"></LargeIcon>Back</MinimalButton></div>
-    <div class="spacer title"><h1 class="bar-title">{{ title }}</h1></div>
+    <div class="spacer title"><h1 class="bar-title" tabindex="-1" ref="heading">{{ title }}</h1></div>
     <div class="spacer save">
       <SaveSection :romIsLoaded="romIsLoaded" :romIsAltered="romIsAltered" :fileName="fileName" @save="download" @unload="unload">
       </SaveSection>
@@ -41,6 +41,21 @@ export default {
       const { romIsLoaded, romIsAltered, fileName, warnings } = storeToRefs(MainStore);
       return {
         romIsLoaded, romIsAltered, fileName, warnings
+      }
+    },
+    watch: {
+      title: {
+        immediate: true,
+        handler(title) {
+          document.title = (!title || title === "WPC Edit") ? "WPC Edit" : `${title} – WPC Edit`;
+        }
+      },
+      $route(to, from) {
+        // Move focus to the view heading after navigation, so keyboard and
+        // screen reader users start at the top of the new view.
+        // Skip the initial navigation on page load (from has no matched route).
+        if(!from || from.matched.length === 0 || to.path === from.path) return;
+        this.$nextTick(() => this.$refs.heading?.focus());
       }
     },
     data() {
@@ -123,6 +138,7 @@ export default {
   justify-content: right;
 }
 .bar-title {
+  outline: none;
   font-weight: 400;
   font-size: 2.8rem;
   color: var(--grey8);
