@@ -4,6 +4,7 @@
             :stepBtns="true"
             :closeBtn="true"
             :title="title"
+            itemName="sprite"
             @next="goNext()"
             @prev="goPrev()"
             @next2="goN2()"
@@ -21,6 +22,7 @@
                         :image="image0()">
                     </SubDmd>
                     <OffsetControl
+                        spriteName="this sprite"
                         @move-x="moveSprite0X"
                         @move-y="moveSprite0Y"
                         :xOffset="xOffset0"
@@ -39,6 +41,7 @@
                         @enabled="setBlendStatus">
                     </SubDmd>
                     <OffsetControl
+                        spriteName="the blend sprite"
                         @move-x="moveSprite1X"
                         @move-y="moveSprite1Y"
                         :xOffset="xOffset1"

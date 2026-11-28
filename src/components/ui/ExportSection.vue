@@ -1,8 +1,8 @@
 <template>
     <div class="export-section">
         <div class="option-section">
-            <label for="exportselect" class="label-sm">Export as:</label>
-            <SelectInput name="exportselect" :options="options" class="export-select" @change="changeSetting"></SelectInput>
+            <p class="label-sm" aria-hidden="true">Export as:</p>
+            <SelectInput name="exportselect" label="Export as" :options="options" class="export-select" @change="changeSetting"></SelectInput>
         </div>
         <StandardButton @click="this.$emit('export-main');" size="small" class="btn">Export main plane</StandardButton>
         <StandardButton @click="this.$emit('export-blend');" size="small" class="btn">Export blend plane</StandardButton>

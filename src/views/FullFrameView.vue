@@ -4,8 +4,10 @@
         <div class="content-wrapper">
         <PaginationBlock v-if="settings.dmdsPerPage>0" class="pagination" @next="nextPage" @prev="prevPage" @start="startPage"></PaginationBlock>
         <div class="fullframe-list" :key="currPage">
-          <FullFrameItem v-for="n in pageLength" :image="getFrame(n-1)" :key="n" :index="n-1" @open="openModal"></FullFrameItem>
+          <FullFrameItem v-for="n in pageLength" :image="getFrame(n-1)" :key="n" :index="n-1" @open="openModal"
+            :label="`Full frame image ${pageOffset + n - 1}`" :tabbable="n <= tabLimit"></FullFrameItem>
         </div>
+        <MoreInTabOrder :shown="tabLimit" :total="pageLength" what="images" @more="showMoreInTabOrder('.list-item-fullframe')"></MoreInTabOrder>
       </div>
     </div>
       <FullFrameModal :show="showModal" @close="showModal = false" :index="activeIndex"></FullFrameModal>
@@ -15,6 +17,7 @@
   <script>
     import FullFrameModal from '../components/ui/modals/FullFrameModal.vue';
     import PaginationBlock from '../components/ui/PaginationBlock.vue';
+    import MoreInTabOrder, { tabStep } from '../components/ui/MoreInTabOrder.vue';
     import store from "../stores/store.js";
     import { storeToRefs } from 'pinia';
     import { useMainStore } from '../stores/mainStore.js';
@@ -29,7 +32,8 @@
           import('../components/ui/list-items/FullFrameItem.vue')
         ),
         PaginationBlock,
-        FullFrameModal
+        FullFrameModal,
+        MoreInTabOrder
     },
     props: {
       
@@ -45,10 +49,15 @@
         return {
           activeIndex: 0,
           currPage: 0,
-          showModal: false
+          showModal: false,
+          // Only this many images are reached with Tab, see MoreInTabOrder
+          tabLimit: tabStep
           }
     },
     computed: {
+      pageOffset() {
+        return this.currPage*this.pageLength;
+      },
       pageLength() {
         const setting = Number(this.settings.dmdsPerPage);
         if(setting == 0) {
@@ -63,6 +72,11 @@
             return 32;
           }
         }
+      }
+    },
+    watch: {
+      currPage() {
+        this.tabLimit = tabStep;
       }
     },
     methods: {
@@ -85,6 +99,11 @@
       },
       startPage() {
         this.currPage = 0;
+      },
+      showMoreInTabOrder(selector) {
+        const first = this.tabLimit;
+        this.tabLimit += tabStep;
+        this.$nextTick(() => this.$el.querySelectorAll(selector)[first]?.focus());
       }
     },
     beforeRouteEnter() {

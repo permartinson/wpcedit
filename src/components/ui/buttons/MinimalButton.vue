@@ -1,5 +1,5 @@
 <template>
-    <button class="dir-btn" :class="size"><slot></slot></button>
+    <button type="button" class="dir-btn" :class="size"><slot></slot></button>
 </template>
 
 <script>

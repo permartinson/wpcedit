@@ -31,7 +31,7 @@
                 <p class="body-sm">Use this tool to calculate and set new valid checksum and fixup bytes of a modified WPC ROM. The checksum is caluculated from a sum of all the bytes in the ROM and consists of two bytes, of which the last byte represents the game version. The fixup bytes can be any value that makes the checksum match.</p>
                 <p class="headline">Desired game version:</p>
                 <div class="checksum-form">
-                    <NumeralInput size="large" :value="Number(this.versionByte)" :maxlength="2" :min="1" :max="99" class="version-input" ref="version" @change="updateInput"></NumeralInput>
+                    <NumeralInput size="large" label="Desired game version" :value="Number(this.versionByte)" :maxlength="2" :min="1" :max="99" class="version-input" ref="version" @change="updateInput"></NumeralInput>
                     <StandardButton size="large" type="primary" @click="updateChecksum(value)">Update checksum</StandardButton>
                 </div>
                 <p class="label-md text-accent feedback-msg" :class="checksumFeedbackClass" ref="checksumFeedback">{{ checksumFeedbackMsg }}</p>

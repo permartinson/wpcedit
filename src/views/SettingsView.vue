@@ -8,7 +8,7 @@
 
 <MainDmd :image0="image0" :image1="image1" :index="0" :key="settings.displayStyle" ref="main"></MainDmd>
 
-<SelectInput name="dmdstyle" :options="dmdOptions" @change="setDmdStyle" class="dmd-style-select"></SelectInput>
+<SelectInput name="dmdstyle" label="Display style" :options="dmdOptions" @change="setDmdStyle" class="dmd-style-select"></SelectInput>
 </div>
 <div class="setting">
 <p class="headline">Make in-betweening optional</p>
@@ -19,7 +19,7 @@
 
 <p class="headline">DMD graphics per page</p>
 <p class="body-sm">Rendering many DMD images at once can be perfomance-intense. If you experience issues, you may reduce the amount of DMD images per page in the Full Frame and Sprite listings.</p>
-<SelectInput name="perpage" :options="paginationOptions" @change="setPagination" class="pagination-select"></SelectInput>
+<SelectInput name="perpage" label="DMD graphics per page" :options="paginationOptions" @change="setPagination" class="pagination-select"></SelectInput>
 </div>
 <div class="setting">
 

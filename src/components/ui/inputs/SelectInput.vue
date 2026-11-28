@@ -1,6 +1,6 @@
 <template>
     <div class="select">
-    <select :name="name" @change="changeSelection" ref="select">
+    <select :name="name" :aria-label="label" @change="changeSelection" ref="select">
         <option v-for="(option,n) in options" :key="n" :value="option.value" :selected="option.selected">{{option.label}}</option>
     </select>
     <span class="focus"></span>
@@ -13,6 +13,8 @@ export default {
   name: 'SelectInput',
   props: {
     name: String,
+    // The name a screen reader reads for the select
+    label: String,
     options: Array
   },
   methods: {

@@ -1,11 +1,11 @@
 <template>
   <div class="scroll-area">
     <div class="main-container">
-¨    <div v-if="romIsLoaded" class="navigation">
-        <FeatureButton icon="fullframe" @click="this.$router.push('/wpcedit/fullframe')">Full frame graphics</FeatureButton>
-        <FeatureButton icon="sprites" @click="this.$router.push('/wpcedit/sprites')">Sprites and fonts</FeatureButton>
-        <FeatureButton icon="checksum" @click="this.$router.push('/wpcedit/checksum')">Checksum tool</FeatureButton>
-        <FeatureButton icon="settings" @click="this.$router.push('/wpcedit/settings')">Settings</FeatureButton>
+    <div v-if="romIsLoaded" class="navigation">
+        <FeatureButton icon="fullframe" to="/wpcedit/fullframe">Full frame graphics</FeatureButton>
+        <FeatureButton icon="sprites" to="/wpcedit/sprites">Sprites and fonts</FeatureButton>
+        <FeatureButton icon="checksum" to="/wpcedit/checksum">Checksum tool</FeatureButton>
+        <FeatureButton icon="settings" to="/wpcedit/settings">Settings</FeatureButton>
     </div>
 
     <FileDrop v-if="!romIsLoaded" @loaded="loadRom"></FileDrop>

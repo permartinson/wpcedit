@@ -2,16 +2,16 @@
     <div class="header-container">
         <div class="area left-area">
             <div v-if="stepBtns" class="step-buttons">
-                <MinimalButton @click="this.$emit('prev')" size="large"><LargeIcon type="left"></LargeIcon></MinimalButton>
-                <MinimalButton @click="this.$emit('next')" size="large"><LargeIcon type="right"></LargeIcon></MinimalButton>
-                <MinimalButton @click="this.$emit('prev2')" size="small" class="fast-btn"><SmallIcon type="double-left"></SmallIcon></MinimalButton>
-                <MinimalButton @click="this.$emit('next2')" size="small" class="fast-btn"><SmallIcon type="double-right"></SmallIcon></MinimalButton>
+                <MinimalButton @click="this.$emit('prev')" size="large" :aria-label="`Previous ${itemName}`"><LargeIcon type="left"></LargeIcon></MinimalButton>
+                <MinimalButton @click="this.$emit('next')" size="large" :aria-label="`Next ${itemName}`"><LargeIcon type="right"></LargeIcon></MinimalButton>
+                <MinimalButton @click="this.$emit('prev2')" size="small" class="fast-btn" :aria-label="`Back 2 ${itemName}s`"><SmallIcon type="double-left"></SmallIcon></MinimalButton>
+                <MinimalButton @click="this.$emit('next2')" size="small" class="fast-btn" :aria-label="`Forward 2 ${itemName}s`"><SmallIcon type="double-right"></SmallIcon></MinimalButton>
             </div>
         </div>
         <div class="area middle-area"><p class="title">{{ title }}</p></div>
         <div class="area right-area">
             <div v-if="closeBtn" class="close-area">
-                <MinimalButton @click="$emit('close')" size="large"><LargeIcon type="close"></LargeIcon></MinimalButton>
+                <MinimalButton @click="$emit('close')" size="large" aria-label="Close"><LargeIcon type="close"></LargeIcon></MinimalButton>
             </div>
         </div>
    </div>
@@ -32,7 +32,9 @@ export default {
   props: {
     title: String,
     closeBtn: Boolean,
-    stepBtns: Boolean
+    stepBtns: Boolean,
+    // What the step buttons step through, for their names: "Next image"
+    itemName: { type: String, default: 'image' }
   },
   methods: {
   }

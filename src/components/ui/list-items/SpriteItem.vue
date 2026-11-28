@@ -1,9 +1,9 @@
 <template>
-    <div class="list-item-sprite" @click="$emit('open',{index:index,tableIndex:tableIndex})" ref="target">
-      <div class="list-item-inner">
+    <button type="button" class="list-item-sprite" @click="$emit('open',{index:index,tableIndex:tableIndex})" ref="target" :aria-label="spriteLabel" :tabindex="tabbable ? 0 : -1">
+      <span class="list-item-inner">
         <ListDmd v-if="dmdIsVisible" :index="index" :table="tableIndex" :image="image" :worker="worker"></ListDmd>
-      </div>
-    </div>
+      </span>
+    </button>
 </template>
 
 <script>
@@ -16,11 +16,22 @@ export default {
   props: {
     image: Uint8Array,
     index: Number,
+    // false: the item can be clicked but is skipped by Tab (see the list views)
+    tabbable: { type: Boolean, default: true },
     tableIndex: Number,
     worker: Worker
   },
   components: {
     ListDmd
+  },
+  computed: {
+    // "Sprite 0x41 (A), table 3". Fonts use ASCII codes, so the printable
+    // ones are shown as the character too.
+    spriteLabel() {
+      const code = `0x${this.index.toString(16).toUpperCase().padStart(2, '0')}`;
+      const character = this.index > 0x20 && this.index < 0x7f ? ` (${String.fromCharCode(this.index)})` : '';
+      return `Sprite ${code}${character}, table ${this.tableIndex}`;
+    }
   },
   data() {
     return {
@@ -57,6 +68,11 @@ export default {
 <style scoped>
 
 .list-item-sprite {
+  display: block;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
   width: 100%;
   max-width: 23.5rem;
   height: 8.2rem;
@@ -73,6 +89,7 @@ export default {
 }
 
 .list-item-inner {
+  display: block;
   position: relative;
   width: 100%;
   height: 100%;

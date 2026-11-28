@@ -1,11 +1,24 @@
 import js from '@eslint/js';
 import pluginVue from 'eslint-plugin-vue';
+import pluginVueA11y from 'eslint-plugin-vuejs-accessibility';
 import globals from 'globals';
 
 export default [
   { ignores: ['dist/', 'node_modules/', 'dev-dist/', 'coverage/', 'test-results/'] },
   js.configs.recommended,
   ...pluginVue.configs['flat/essential'],
+  // Accessibility rules for the templates (WCAG 2.2 AA, see Claude/fas-C.md).
+  // Only warns for now; they become errors when phase C is done.
+  ...pluginVueA11y.configs['flat/recommended'].map((config) => ({
+    ...config,
+    rules: Object.fromEntries(Object.keys(config.rules ?? {}).map((rule) => [rule, 'warn'])),
+  })),
+  {
+    rules: {
+      // A label around its field (as in CheckBox.vue) is enough, no id needed
+      'vuejs-accessibility/label-has-for': ['warn', { required: { some: ['nesting', 'id'] } }],
+    },
+  },
   {
     languageOptions: {
       ecmaVersion: 'latest',

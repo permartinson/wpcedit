@@ -1,12 +1,10 @@
 <template>
-    <div class="feature-btn" @click="$emit('click')">
-        <div class="feature-btn-outer">
-            <div class="feature-btn-inner" :class="icon">
-                
-            </div>
-        </div>
-        <div class="label"><slot></slot></div>
-    </div>
+    <router-link class="feature-btn" :to="to">
+        <span class="feature-btn-outer">
+            <span class="feature-btn-inner" :class="icon"></span>
+        </span>
+        <span class="label"><slot></slot></span>
+    </router-link>
 </template>
 
 <script>
@@ -14,7 +12,8 @@
 export default {
   name: 'FeatureButton',
   props: {
-    icon: String
+    icon: String,
+    to: String
   }
 }
 
@@ -22,6 +21,9 @@ export default {
 
 <style scoped>
 .feature-btn {
+    display: block;
+    color: inherit;
+    text-decoration: none;
     width: 14.4rem;
     text-align: center;
     cursor: pointer;
@@ -29,6 +31,7 @@ export default {
 }
 
 .feature-btn-outer {
+    display: block;
     position: relative;
     width: 14.4rem;
     height: 14.4em;
@@ -43,6 +46,7 @@ export default {
 }
 
 .feature-btn-inner {
+    display: block;
     position: absolute;
     top: var(--btn-outer-frame);
     left: var(--btn-outer-frame);
@@ -53,6 +57,7 @@ export default {
     background-position: center;
 }
 .label {
+    display: block;
     font-size: var(--text-sm);
     font-weight: 700;
     color: var(--grey8);

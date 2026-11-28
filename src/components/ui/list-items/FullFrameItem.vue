@@ -1,9 +1,9 @@
 <template>
-    <div class="list-item-fullframe" @click="$emit('open',index)" ref="target">
-      <div class="list-item-inner">
+    <button type="button" class="list-item-fullframe" @click="$emit('open',index)" ref="target" :aria-label="label" :tabindex="tabbable ? 0 : -1">
+      <span class="list-item-inner">
         <ListDmd v-if="dmdIsVisible" :index="index" :image="image"></ListDmd>
-      </div>
-    </div>
+      </span>
+    </button>
 </template>
 
 <script>
@@ -16,6 +16,10 @@ export default {
   props: {
     image: Uint8Array,
     index: Number,
+    // The name a screen reader reads, for example "Full frame image 17"
+    label: String,
+    // false: the item can be clicked but is skipped by Tab (see the list views)
+    tabbable: { type: Boolean, default: true },
   },
   components: {
     ListDmd
@@ -55,6 +59,11 @@ export default {
 <style scoped>
 
 .list-item-fullframe {
+  display: block;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
   width: 23.5rem;
   height: 8.2rem;
   background: var(--grey5);
@@ -70,6 +79,7 @@ export default {
 }
 
 .list-item-inner {
+  display: block;
   position: relative;
   width: 100%;
   height: 100%;

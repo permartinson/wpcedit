@@ -1,7 +1,8 @@
 <template>
     <div class="sprite-list">
         <p class="label-md table-header">Table {{ tableIndex }}</p>
-        <SpriteItem v-for="n in table" :image="getFrame(n)" :key="n" :index="n" :tableIndex="tableIndex" @open="openModal"></SpriteItem>
+        <SpriteItem v-for="(n, position) in table" :image="getFrame(n)" :key="n" :index="n" :tableIndex="tableIndex" @open="openModal"
+            :tabbable="tabStart + position < tabLimit"></SpriteItem>
     </div>
 </template>
 
@@ -23,7 +24,11 @@ export default {
     show: Boolean,
     table: Array,
     tableIndex: Number,
-    tableAddress: String
+    tableAddress: String,
+    // The place of this table's first sprite in the whole list, and how
+    // many sprites are reached with Tab (see MoreInTabOrder)
+    tabStart: { type: Number, default: 0 },
+    tabLimit: { type: Number, default: Infinity }
   },
   data() {
     return {

@@ -1,5 +1,5 @@
 <template>
-    <input type="number" class="num-input" :class="getClass()" :min="min" :max="max" v-model="model" ref="input" />
+    <input type="number" class="num-input" :aria-label="label" :class="getClass()" :min="min" :max="max" v-model="model" ref="input" />
 </template>
 
 <script>
@@ -7,6 +7,8 @@ export default {
   name: 'NumeralInput',
   props: {
     value: Number,
+    // The name a screen reader reads for the field
+    label: String,
     max: Number,
     min: Number,
     maxlength: Number,

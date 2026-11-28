@@ -3,9 +3,11 @@
         <div class="main-container" :key="currPage">
           <div class="content-wrapper">
           <PaginationBlock v-if="settings.dmdsPerPage>0" class="pagination" @next="nextPage" @prev="prevPage" @start="startPage"></PaginationBlock>
-            <SpriteList v-for="(table, index) in tableMap" :key="tableIndex(table.index)" :table="table" :table-index="tableIndex(index)" @openModal="openModal">
+            <SpriteList v-for="(table, index) in tableMap" :key="tableIndex(table.index)" :table="table" :table-index="tableIndex(index)" @openModal="openModal"
+              :tab-start="tableStarts[index]" :tab-limit="tabLimit">
               Sprite
             </SpriteList>
+            <MoreInTabOrder :shown="tabLimit" :total="spriteCount" what="sprites" @more="showMoreInTabOrder"></MoreInTabOrder>
           </div>
       </div>
       <SpriteModal :show="showModal" @close="showModal = false" :index="activeIndex" :table="activeTable"></SpriteModal>
@@ -15,6 +17,7 @@
   <script>
     import SpriteList from '../components/ui/lists/SpriteList.vue';
     import PaginationBlock from '../components/ui/PaginationBlock.vue';
+    import MoreInTabOrder, { tabStep } from '../components/ui/MoreInTabOrder.vue';
     import SpriteModal from '../components/ui/modals/SpriteModal.vue';
     import store from "../stores/store.js";
     import { storeToRefs } from 'pinia';
@@ -27,7 +30,8 @@
     components: {
         SpriteList,
         PaginationBlock,
-        SpriteModal
+        SpriteModal,
+        MoreInTabOrder
     },
     props: {
       
@@ -51,16 +55,35 @@
           activeIndex: 0,
           activeTable: 0,
           currPage: 0,
-          showModal: false
+          showModal: false,
+          // Only this many sprites are reached with Tab, see MoreInTabOrder
+          tabLimit: tabStep
       }
     },
     computed: {
+      // The place of each table's first sprite in the whole list
+      tableStarts() {
+        let start = 0;
+        return this.tableMap.map((table) => {
+          const tableStart = start;
+          start += table.length;
+          return tableStart;
+        });
+      },
+      spriteCount() {
+        return this.tableMap.reduce((sum, table) => sum + table.length, 0);
+      },
       tableMap() { // Translate table map to a local, so we can paginate
         if(this.settings.dmdsPerPage > 0) {
           return [ this.spriteTableMap[this.currPage] ];
         } else {
           return this.spriteTableMap;
         }
+      }
+    },
+    watch: {
+      currPage() {
+        this.tabLimit = tabStep;
       }
     },
     methods: {
@@ -90,6 +113,11 @@
       },
       startPage() {
         this.currPage = 0;
+      },
+      showMoreInTabOrder() {
+        const first = this.tabLimit;
+        this.tabLimit += tabStep;
+        this.$nextTick(() => this.$el.querySelectorAll('.list-item-sprite')[first]?.focus());
       }
     },
     beforeRouteEnter() {

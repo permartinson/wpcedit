@@ -33,12 +33,14 @@
     "wpcedit": "^0.5.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.1",
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.65.1",
     "@vitejs/plugin-vue": "^6.0.11",
     "@vitest/coverage-v8": "^5.1.2",
     "eslint": "^10.15.0",
     "eslint-plugin-vue": "^10.12.1",
+    "eslint-plugin-vuejs-accessibility": "^2.6.3",
     "execa": "latest",
     "globals": "^17.14.0",
     "happy-dom": "^21.0.4",

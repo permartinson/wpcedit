@@ -9,7 +9,7 @@
                     <div class="plate"></div>
                 </div>
             </div>
-            <input type="file" ref="romfile" @change="loaded" title="" />
+            <input type="file" ref="romfile" @change="loaded" title="" aria-label="Choose a WPC Pinball game ROM file" />
         </div>
         <div class="decoration down"></div>
     </div>
@@ -64,6 +64,12 @@ export default {
 }
 .drop-container:hover .file-drop, .drop-container:drop .file-drop {
     background-color: var(--grey3);
+}
+/* The file field itself is invisible, so its keyboard focus is shown on the drop area */
+.drop-container:has(input:focus-visible) .file-drop {
+    background-color: var(--grey3);
+    outline: 0.2rem solid var(--accent);
+    outline-offset: -0.2rem;
 }
 
 input[type=file] {

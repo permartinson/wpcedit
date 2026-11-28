@@ -1,5 +1,5 @@
 <template>
-    <button class="std-btn" :class="getClass()"><slot></slot></button>
+    <button type="button" class="std-btn" :class="getClass()"><slot></slot></button>
 </template>
 
 <script>

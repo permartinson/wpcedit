@@ -2,16 +2,16 @@
     <div class="control-container">
         <div class="buttons">
             <div class="up-container">
-                <MinimalButton @click="this.$emit('move-y',-1);" size="large" class="up"><LargeIcon type="up"></LargeIcon></MinimalButton>
+                <MinimalButton @click="this.$emit('move-y',-1);" size="large" class="up" :aria-label="`Move ${spriteName} up`"><LargeIcon type="up"></LargeIcon></MinimalButton>
             </div>
             <div class="down-container">
-                <MinimalButton @click="this.$emit('move-y',1);" size="large" class="down"><LargeIcon type="down"></LargeIcon></MinimalButton>
+                <MinimalButton @click="this.$emit('move-y',1);" size="large" class="down" :aria-label="`Move ${spriteName} down`"><LargeIcon type="down"></LargeIcon></MinimalButton>
             </div>
             <div class="left-container">
-                <MinimalButton @click="this.$emit('move-x',-1);" size="large" class="left"><LargeIcon type="left"></LargeIcon></MinimalButton>
+                <MinimalButton @click="this.$emit('move-x',-1);" size="large" class="left" :aria-label="`Move ${spriteName} left`"><LargeIcon type="left"></LargeIcon></MinimalButton>
             </div>
             <div class="right-container">
-                <MinimalButton @click="this.$emit('move-x',1);" size="large" class="right"><LargeIcon type="right"></LargeIcon></MinimalButton>
+                <MinimalButton @click="this.$emit('move-x',1);" size="large" class="right" :aria-label="`Move ${spriteName} right`"><LargeIcon type="right"></LargeIcon></MinimalButton>
             </div>
             <div class="position-container">
                 <p class="label-header">Position:</p>
@@ -37,6 +37,8 @@
     },
     props: {
       xOffset: Number,
+      // For the names of the arrow buttons: "Move this sprite up"
+      spriteName: { type: String, default: 'the sprite' },
       yOffset: Number
     },
     methods: {
