@@ -56,7 +56,6 @@
         <ModalFooter>
             <ExportSection @export-main="exportCurrentSprite(0)" @export-blend="exportCurrentSprite(1)" :options="options">
             </ExportSection>
-            <p class="key-hint">Keys: ← → previous or next sprite, with Shift 2 steps. Esc closes.</p>
         </ModalFooter>
     </BaseModal>
 </template>
@@ -312,10 +311,5 @@ export default {
 }
 .modal-body {
     margin: 0 var(--space-md);
-}
-.key-hint {
-    margin-top: var(--space-sm);
-    font-size: var(--text-sm);
-    color: var(--grey8);
 }
 </style>

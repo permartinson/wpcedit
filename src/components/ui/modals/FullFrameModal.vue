@@ -66,7 +66,6 @@
         <ModalFooter>
             <ExportSection @export-main="exportCurrentFrame(0)" @export-blend="exportCurrentFrame(1)" :options="options">
             </ExportSection>
-            <p class="key-hint">Keys: ← → previous or next image, with Shift 2 steps. Esc closes.</p>
         </ModalFooter>
     </BaseModal>
 </template>
@@ -420,10 +419,5 @@ export default {
 .in-between {
     margin-top: var(--space-sm);
     margin-bottom: var(--space-md);
-}
-.key-hint {
-    margin-top: var(--space-sm);
-    font-size: var(--text-sm);
-    color: var(--grey8);
 }
 </style>
