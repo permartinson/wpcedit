@@ -82,6 +82,16 @@ async function loadRom(page, name) {
 
 // Reads all DMDs in a part of the page, after the app has drawn them
 async function readDmds(page, selector = 'body') {
+  // The lists draw their DMDs when they come into view, and a busy computer
+  // can take a while. Wait until there are DMDs and their number has stopped
+  // growing, so that a slow machine reads the same DMDs as a fast one.
+  const canvases = page.locator(`${selector} canvas`);
+  let count = -1;
+  await expect.poll(async () => {
+    const previous = count;
+    count = await canvases.count();
+    return count > 0 && count === previous;
+  }, { intervals: [250], timeout: 15000 }).toBe(true);
   // The plasma display loads its dot images in the background
   await page.waitForTimeout(500);
   return page.evaluate(readDmdCanvases, await page.$$(`${selector} canvas`));
