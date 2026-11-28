@@ -33,6 +33,19 @@ To run `npm run check` with your ROM files before every push, turn on the git ho
 
 ROM files are copyrighted and are never committed. The tests read them from the folder in `WPCEDIT_ROMS`, or from `../js/wpcedit.js/roms`. Tests that need a ROM are shown as skipped when it is missing.
 
+## Accessibility
+
+The app aims at [WCAG 2.2](https://www.w3.org/TR/WCAG22/) level AA. `npm run check` stops on most problems, but some things only a person can check. For every change:
+
+- **Keyboard:** everything works with Tab, Shift+Tab, Enter, Space and Esc. Use `<button>` for actions and `<router-link>`/`<a>` for navigation, never a clickable `<div>`. Focus is always visible (the orange `:focus-visible` ring in `App.vue`), and Tab never gets stuck.
+- **Names:** every button, link and field has a name a screen reader can read: visible text, a `<label>`, or `aria-label` when there is only an icon. Icons are `aria-hidden`. DMD images have `role="img"` and a description.
+- **Windows and dialogs:** use `BaseModal` or `AlertDialog`. They move focus in and back, keep Tab inside, close with Esc and make the page behind inert.
+- **Contrast:** text at least 4.5:1 against its background, large text and borders of controls at least 3:1. On the dark backgrounds, use `--grey8` or lighter for text.
+- **Messages** that appear after an action have `role="status"` (or `role="alert"` for errors), so they are read out.
+- **Motion:** animations respect `prefers-reduced-motion`.
+- **Tests:** a new view, window or dialog is added to `tests/screen/accessibility.spec.mjs` (axe) and, if it has new controls, to `tests/screen/keyboard.spec.mjs`. Keep `knownViolations` empty; the lint rules from `eslint-plugin-vuejs-accessibility` are errors.
+- **Before a release:** try the app with VoiceOver (Cmd-F5 on a Mac) in Safari: tab through each view, open a window, and check that what is read out makes sense.
+
 ## Feature wishlist
 
 - Include a hex editor
